@@ -181,6 +181,7 @@ function commandHandler(input : string) {
   }
 
   switch(input) {
+    case 'cls':
     case 'clear':
       setTimeout(() => {
         if(!TERMINAL || !WRITELINESCOPY) return
@@ -402,3 +403,18 @@ const initEventListeners = () => {
 }
 
 initEventListeners();
+
+
+// Function to update the time
+function updateTime() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+
+  const timeElement = document.getElementById('bar-1');
+  if (timeElement) {
+      timeElement.textContent = timeString;
+  }
+}
+
+updateTime();
+setInterval(updateTime, 1000);

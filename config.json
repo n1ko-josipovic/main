@@ -1,23 +1,24 @@
 {
-  "ascii": [
-    "███████╗██╗  ██╗███████╗██╗     ██╗",
-    "██╔════╝██║  ██║██╔════╝██║     ██║",
-    "███████╗███████║█████╗  ██║     ██║",
-    "╚════██║██╔══██║██╔══╝  ██║     ██║",
-    "███████║██║  ██║███████╗███████╗███████╗",
-    "╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝"
+  "ascii": [            
+
+    "     ██╗ ██████╗ ███████╗██╗  ██╗ █████╗",
+    "     ██║██╔═══██╗██╔════╝██║ ██╔╝██╔══██╗",
+    "     ██║██║   ██║███████╗█████╔╝ ███████║",
+    "██   ██║██║   ██║╚════██║██╔═██╗ ██╔══██║",
+    "╚█████╔╝╚██████╔╝███████║██║  ██╗██║  ██║",
+    " ╚════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝"
   ],
-  "title": "WebShell",
-  "username": "visitor",
-  "hostname": "webshell",
-  "password": "050823",
-  "repoLink": "https://github.com/nasan016/webshell",
+  "title": "Niko Josipović",
+  "username": "strippy",
+  "hostname": "tsrb",
+  "password": "tsrb1234",
+  "repoLink": "https://github.com/n1ko-josipovic/main",
   "social": {
-    "email": "your@email.com",
-    "github": "yourgithub",
-    "linkedin": "you"
+    "email": "niko.josipovic3@skole.hr",
+    "github": "n1ko-josipovic",
+    "linkedin": "LinkedIn"
   },
-  "aboutGreeting": "Hi stranger. Welcome to WebShell.",
+  "aboutGreeting": "Dobrodošli u moje web-sjedište.",
   "projects": [
     [
       "GofeR",
