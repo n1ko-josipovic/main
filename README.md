@@ -11,7 +11,7 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-## Opis projekta
+## O projektu
   Ovaj projekt, web stranica, je nastao za potrebe škole. Primarni cilj web stranice je omogućiti objavljivanje školskih dokumenata, a nadam se da će biti korisna i drugim učenicima.
 Projekt je baziran na projektu autora <a href="https://github.com/nasan016">nasan016</a>: <a href="https://github.com/nasan016/webshell">Webshell</a>.
 Ovim putem se zahvaljujem autoru na dozvoli za korištenja i prilagodbe.
