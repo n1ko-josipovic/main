@@ -1,36 +1,54 @@
 const helpObj = {
   "commands": [
     [
-    "'about'",
-    "Who made this website?",
+      "'about'",
+      "Osnovni podaci o meni i mom web sjedištu.",
+    ],
+    [
+      "'banner'",
+      "Prikaz 'transparenta'."
+    ],
+    [
+      "'cd'",
+      "Ispis sadržaja direktorija."
+    ],
+    [
+      "'echo'",
+      "Ispis upisane poruke - echo &lt;poruka&gt;."
+    ],
+    [
+      "'help'",
+      "Dostupne naredbe i značajke."
+    ],
+    [
+      "'history'",
+      "Prikaz korištenih naredbi."
     ],
     [
       "'projects'",
-      "Maybe there's something interesting."
-    ],
-    [
-      "'whoami'",
-      "A perplexing question."
-    ],
-    ["'sudo'",
-      "???"
+      "Lista softverskih projekata."
     ],
     [
       "'repo'",
-      "View the Github Repository."
+      "Pregled GitHub repozitorija."
     ],
-    ["'banner'",
-      "Display the banner."
+    [
+      "'time'",
+      "Najvažnija odbrojavanja."
+    ],
+    [
+      "'tree'",
+      "Prikaz strukture direktorija."
     ],
     [
       "'clear'",
-      "Clear the terminal."
+      "Očisti terminal."
     ]
   ],
 }
 
-const createHelp = () : string[] => {
-  const help : string[] = []
+const createHelp = (): string[] => {
+  const help: string[] = []
   help.push("<br>")
 
   helpObj.commands.forEach((ele) => {
@@ -46,9 +64,9 @@ const createHelp = () : string[] => {
   })
 
   help.push("<br>");
-  help.push("Press <span class='keys'>[Tab]</span> for auto completion.");
-  help.push("Press <span class='keys'>[Esc]</span> to clear the input line.");
-  help.push("Press <span class='keys'>[↑][↓]</span> to scroll through your history of commands.");
+  help.push("Pritisnite <span class='keys'>[Tab]</span> za automatsko dovršavanje naredbe.");
+  help.push("Pritisnite <span class='keys'>[Esc]</span> za brisanje linije unosa.");
+  help.push("Pritisnite <span class='keys'>[↑][↓]</span> za pomicanje kroz povijest naredbi.");
   help.push("<br>");
   return help
 }

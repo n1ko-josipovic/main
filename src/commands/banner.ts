@@ -1,11 +1,10 @@
 import command from '../../config.json' assert {type: 'json'};
 
-const createBanner = () : string[] => {
-  const banner : string[] = [];
+const createBanner = (): string[] => {
+  const banner: string[] = [];
   banner.push("<br>")
   command.ascii.forEach((ele) => {
     let bannerString = "";
-    //this is for the ascii art
     for (let i = 0; i < ele.length; i++) {
       if (ele[i] === " ") {
         bannerString += "&nbsp;";
@@ -13,14 +12,14 @@ const createBanner = () : string[] => {
         bannerString += ele[i];
       }
     }
-    
+
     let eleToPush = `<pre>${bannerString}</pre>`;
     banner.push(eleToPush);
-  });  
+  });
   banner.push("<br>");
-  banner.push("Welcome to WebShell v1.0.0");
-  banner.push("Type <span class='command'>'help'</span> for a list of all available commands.");
-  banner.push(`Type <span class='command'>'repo'</span> to view the GitHub repository or click <a href='${command.repoLink}' target='_blank'>here</a>.`);
+  banner.push("Dobrodošli u WebSphere v2.0.0");
+  banner.push("Upišite <span class='command'>'help'</span> za popis svih dostupnih naredbi.");
+  banner.push(`Upišite <a href='${command.repoLink}' class="no-hover" style="text-decoration: none;" target='_blank'><span class='command'>'repo'</span></a> za pregled GitHub repozitorija.`);
   banner.push("<br>");
   return banner;
 }

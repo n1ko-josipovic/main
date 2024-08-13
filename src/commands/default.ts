@@ -1,13 +1,13 @@
-const createDefault = () : string[] => {
+const createDefault = (): string[] => {
   const defaultMsgArr = [
     "<br>",
-    "COMMAND NOT FOUND",
-    "Type <span class='command'>'help'</span> to get started.",
+    "NAREDBA NIJE PRONAĐENA",
+    "Upišite naredbu <span class='command'>'help'</span> za prikaz dostupnih naredbi.",
     "<br>"
-  ]  
-  
-  const defaultMsg : string[] = [];
-  
+  ]
+
+  const defaultMsg: string[] = [];
+
   defaultMsgArr.forEach((ele) => {
     defaultMsg.push(ele);
   })

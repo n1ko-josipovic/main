@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="hrv">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-png" href="/res/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1" />
   <script src="https://kit.fontawesome.com/d5effce557.js" crossorigin="anonymous"></script>
-  <title>Niko Josipović</title>
+  <title>WebSphere | Niko Josipović</title>
 </head>
 
 <body>
@@ -23,8 +23,11 @@
     <br>
     <div id="terminal">
       <div>
-        <span id="prompt"><span id="pre-user"></span>@<span id="pre-host"></span>:$ ~ </span>
+        <span id="prompt"><span id="pre-user"></span>@<a href="https://www.tsrb.hr/" class="no-hover"
+            style="text-decoration: none;"><span id="pre-host"></span></a>:$ ~
+        </span>
       </div>
+
       <!-- command output will be inserted before #write-lines-->
       <a id="write-lines"></a>
     </div>
@@ -33,7 +36,8 @@
         <p id="password-input" style="display: none;">Password: <input id="password-field" autocomplete="off"
             type="password" /></p>
         <p id="input-hidden">
-          <span id="prompt"><span id="user"></span>@<span id="host"></span>:$ ~
+          <span id="prompt"><span id="user"></span>@<a href="https://www.tsrb.hr/" class="no-hover"
+              style="text-decoration: none;"><span id="host"></span></a>:$ ~
           </span>
           <input id="user-input" type="text" enterkeyhint="Enter" spellcheck="false" autocapitalize="none"
             autocomplete="off" />
