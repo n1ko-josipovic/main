@@ -1,7 +1,7 @@
-# [WebShell | Terminal Portfolio Website](https://webshellx.vercel.app/)
+# [WebSphere | Niko Josipović](https://joska.vercel.app/)
 
 <div align="center">
-  <img alt="banner" src="https://raw.githubusercontent.com/nasan016/webshell/main/res/banner.png">
+  <img alt="banner" src="https://github.com/n1ko-josipovic/main/blob/main/res/banner.png">
 </div>
 
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
@@ -10,77 +10,33 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-Create your own terminal styled website! Check out [term.nasan.dev](https://term.nasan.dev/) for an example.
+## Opis projekta
+Ovaj projekt, web stranica, je nastao za potrebe škole. Primarni cilj web stranice je omogućiti objavljivanje školskih dokumenata, a nadam se da će biti korisna i drugim učenicima.
 
-## Features
-* **[Tab]** for auto completion.
-* **[Esc]** to clear the input line.
-* **[↑][↓]** to scroll through your command history.
+Projekt je baziran na izvornom projektu autora <a href="https://github.com/nasan016">nasan016</a>: <a href="https://github.com/nasan016/webshell">Webshell</a>.
+Zahvaljujem se autoru na dozvoli za korištenja i prilagodbe.
 
-## ???
-<div align="center">
-  <img alt="banner" src="https://raw.githubusercontent.com/nasan016/webshell/main/res/secret.png">
-</div>
-How did we get here?
+Niko Josipović, učenik III. razreda Tehničke škole Ruđera Boškovića
 
-## Configuration
+## Značajke
+* **[Tab]** za automatsko dovršavanje.
+* **[Esc]** za brisanje linije unosa.
+* **[↑][↓]** za pomicanje kroz povijest naredbi.
 
-Most of the configuration is done in the `config.json` file.
-
-```json
-{
-  "ascii": [
-    "██████╗ ██╗   ██╗ ██████╗",
-    "██╔══██╗██║   ██║██╔════╝",
-    "██║  ██║██║   ██║██║  ███╗",
-    "██║  ██║██║   ██║██║   ██║",
-    "██████╔╝╚██████╔╝╚██████╔╝",
-    "╚═════╝  ╚═════╝  ╚═════╝",
-  ],
-  "title": "Dug's Terminal",
-  "username": "guest",
-  "hostname": "dug.dev",
-  "password": "squirrel",
-  "repoLink": "https://github.com/nasan016/webshell",
-  "social": {
-    "email": "dug@pixar.com",
-    "github": "dugfromup",
-    "linkedin": "dugthedog"
-  },
-  "aboutGreeting": "My name is Dug. I have just met you.",
-  "projects": [
-    [
-      "Project Name",
-      "Project Description",
-      "Project Link"
-    ],
-    [
-      "Another Project Name",
-      "Another Project Description",
-      "Another Project Link"
-    ]
-  ],
-  "colors": {
-      ...
-  }
-}
-```
-
-## Run the Project Locally:
-
-Clone the repository
+## Pokrenite projekt lokalno:
+Kloniraj repozitorij
 ```shell
-git clone https://github.com/nasan016/webshell.git
+git clone https://github.com/n1ko-josipovic/main.git
 ```
-Go to the project directory
+Pređite u direktorij projekta
 ```shell
-cd webshell
+cd main
 ```
-Install the dependencies
+Instalirajte potrebne pakete
 ```shell
 npm install
 ```
-Start the server
+Pokrenite lokalni server
 ```shell
-npm run dev
+npm run dev (build & preview)
 ```
