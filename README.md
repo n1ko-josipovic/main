@@ -19,7 +19,7 @@ Ovim putem se zahvaljujem autoru na dozvoli za korištenja i prilagodbe.
 <span style="color:grey">Niko Josipović, učenik III. razreda Tehničke škole Ruđera Boškovića</span>
 
 ## Značajke
-* **[Tab]** za automatsko dovršavanje naredbi.
+* **[Tab]** za automatsko dovršavanje naredbe.
 * **[Esc]** za brisanje linije unosa.
 * **[↑][↓]** za pomicanje kroz povijest naredbi.
 
