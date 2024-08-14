@@ -1,16 +1,24 @@
 const helpObj = {
   "commands": [
     [
+      "'ad'",
+      "Pristup direktorijima."
+    ],
+    [
+      "'tree'",
+      "Prikaz strukture direktorija."
+    ],
+    [
+      "",
+      "<br>"
+    ],
+    [
       "'about'",
       "Osnovni podaci o meni i mom web sjedištu.",
     ],
     [
       "'banner'",
       "Prikaz 'transparenta'."
-    ],
-    [
-      "'cd'",
-      "Ispis sadržaja direktorija."
     ],
     [
       "'echo'",
@@ -35,10 +43,6 @@ const helpObj = {
     [
       "'time'",
       "Najvažnija odbrojavanja."
-    ],
-    [
-      "'tree'",
-      "Prikaz strukture direktorija."
     ],
     [
       "'clear'",

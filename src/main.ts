@@ -1,12 +1,14 @@
 import command from '../config.json' assert {type: 'json'};
 import { ABOUT } from "./commands/about"
+import { AD } from "./commands/ad";
 import { BANNER } from "./commands/banner";
 import { DEFAULT } from "./commands/default";
 import { ECHO } from "./commands/echo";
 import { HELP } from "./commands/help";
 import { PROJECTS } from "./commands/projects";
+import { TIME } from "./commands/time";
 import { TREE } from "./commands/tree";
-import { CD } from "./commands/cd";
+
 
 import { UIP } from "./content/uip";
 import { POR } from "./content/por";
@@ -29,7 +31,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["about", "banner", "cd", "cd POR", "cd UIP", "cd UUBP", "cd UURM", "echo", "help", "history", "projects", "repo", "time", "tree", "clear"];
+const COMMANDS = ["about", "ad", "ad POR", "ad UIP", "ad UUBP", "ad UURM", "banner", "echo", "help", "history", "projects", "repo", "time", "tree", "clear"];
 const HISTORY: string[] = [];
 
 const REPO_LINK = command.repoLink;
@@ -106,7 +108,7 @@ function enterKey() {
       userInput = resetInput;
       return
     }
-    else if (userInput.startsWith("cd ") && userInput.trim() !== "cd") {
+    else if (userInput.startsWith("ad ") && userInput.trim() !== "ad") {
       const dir = userInput.slice(2).trim();
       switch (dir) {
         case 'UIP':
@@ -180,8 +182,8 @@ function commandHandler(input: string) {
       writeLines(BANNER);
       break;
 
-    case 'cd':
-      writeLines(CD);
+    case 'ad':
+      writeLines(AD);
       break;
 
     case 'cls':
@@ -242,10 +244,7 @@ function commandHandler(input: string) {
       break;
 
     case 'time':
-      writeLines(["Preusmjeravanje na github.com...", "<br>"]);
-      setTimeout(() => {
-        window.open(REPO_LINK, '_blank');
-      }, 500);
+      writeLines(TIME);
       break;
 
     case 'tree':
