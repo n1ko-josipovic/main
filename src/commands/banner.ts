@@ -17,7 +17,7 @@ const createBanner = (): string[] => {
     banner.push(eleToPush);
   });
   banner.push("<br>");
-  banner.push("Dobrodošli u WebSphere v2.0.0");
+  banner.push("Dobrodošli u WEB sjedište v3.0.1");
   banner.push("Upišite <span class='command'>'help'</span> za popis svih dostupnih naredbi.");
   banner.push(`Upišite <a href='${command.repoLink}' class="no-hover" style="text-decoration: none;" target='_blank'><span class='command'>'repo'</span></a> za pregled GitHub repozitorija.`);
   banner.push("<br>");

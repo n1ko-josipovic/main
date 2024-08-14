@@ -7,10 +7,12 @@ const createEcho = (): string[] => {
         "&nbsp;&nbsp;→ echo &lt;poruka&gt;",
         "<br>",
         "&nbsp;Primjer:",
-        "&nbsp;&nbsp;→ echo Hello, World!",
         "<br>",
-        "&nbsp;Ispis:",
-        "&nbsp;&nbsp;→ Hello, World!",
+        "&nbsp;&nbsp;&nbsp;→ echo Hello, World!",
+        "<br>",
+        "&nbsp;&nbsp;&nbsp;Ispis:",
+        "<br>",
+        "&nbsp;&nbsp;&nbsp;→ Hello, World!",
         "<br>"
     ]
 }
