@@ -11,8 +11,7 @@ const aDay = () => {
 
 const basicInfo = `
     <br>
-    &nbsp;<span class='bold-font'>Trenutna verzija v.3.0.1</span><br>
-    <br>
+    &nbsp;<span class='bold-font'>WEB sjedište v.3.0.1</span><br>
     &nbsp;&nbsp;→&nbsp;<span class='bold-font'>v.1:</span>&nbsp;&nbsp;11/09/2023 - 14/11/2023 &nbsp;(The-Web)<br>
     &nbsp;&nbsp;→&nbsp;<span class='bold-font'>v.2:</span>&nbsp;&nbsp;15/11/2023 - 09/08/2024 &nbsp;(WebSphere)<br>
     &nbsp;&nbsp;→&nbsp;<span class='bold-font'>v.3:</span>&nbsp;&nbsp;10/08/2024 - ${aDay()} &nbsp;(NN)<br>
