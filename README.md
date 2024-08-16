@@ -5,9 +5,9 @@
 </div>
 
 ## O projektu
-  Ovaj projekt, web stranica, je nastao za potrebe škole. Primarni cilj web stranice je omogućiti objavljivanje školskih dokumenata, a nadam se da će biti korisna i drugim učenicima.
-Projekt je baziran na projektu autora <a href="https://github.com/nasan016">nasan016</a>: <a href="https://github.com/nasan016/webshell">Webshell</a>.
-Ovim putem se zahvaljujem autoru na dozvoli za korištenja i prilagodbu.
+  Ovaj projekt, WEB sjedište, izrađen je u svrhu školskih potreba. Njegova primarna namjena je omogućiti objavljivanje školskih dokumenata, a nadam se da će biti korisna i drugim učenicima.
+Projekt se temelji na radu autora <a href="https://github.com/nasan016">nasan016</a> pod nazivom <a href="https://github.com/nasan016/webshell">Webshell</a>.
+Ovom prilikom želim izraziti zahvalnost autoru na dozvoli za korištenje i prilagodbu njegova rada.
 
 <span style="color:grey">Niko Josipović, učenik III. razreda Tehničke škole Ruđera Boškovića</span>
 
