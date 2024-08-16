@@ -1,4 +1,4 @@
-# [WebSphere | Niko Josipović](https://joska.vercel.app/)
+  # [Niko Josipović](https://joska.vercel.app/)
 
 <div align="center">
   <img alt="banner" src="https://github.com/n1ko-josipovic/main/blob/main/res/banner.png">
