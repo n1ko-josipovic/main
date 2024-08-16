@@ -1,10 +1,8 @@
 const createEcho = (): string[] => {
     return [
         "<br>",
-        "Naredba <span class='command'>'echo'</span> služi za prikazivanje upisane poruke na ekranu.",
-        "<br>",
-        "&nbsp;Sintaksa:",
-        "&nbsp;&nbsp;→ echo &lt;poruka&gt;",
+        "&nbsp;Naredba <span class='command'>'echo'</span> prikazuje željenu poruku na zaslonu.",
+        "&nbsp;Sintaksa: echo &lt;poruka&gt;",
         "<br>",
         "&nbsp;Primjer:",
         "<br>",

@@ -1,19 +1,12 @@
 import command from '../config.json' assert {type: 'json'};
-import { ABOUT } from "./commands/about"
-import { AD } from "./commands/ad";
+import { ABOUTME } from "./commands/aboutme";
+import { ARCHIVE } from "./commands/archive";
 import { BANNER } from "./commands/banner";
 import { DEFAULT } from "./commands/default";
 import { ECHO } from "./commands/echo";
 import { HELP } from "./commands/help";
+import { INFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
-import { TIME } from "./commands/time";
-import { TREE } from "./commands/tree";
-
-
-import { UIP } from "./content/uip";
-import { POR } from "./content/por";
-import { UUBP } from "./content/uubp";
-import { UURM } from "./content/uurm";
 
 
 //mutWriteLines gets deleted and reassigned
@@ -31,7 +24,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["about", "ad", "ad POR", "ad UIP", "ad UUBP", "ad UURM", "banner", "echo", "help", "history", "projects", "repo", "time", "tree", "clear"];
+const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "clear"];
 const HISTORY: string[] = [];
 
 const REPO_LINK = command.repoLink;
@@ -101,38 +94,12 @@ function enterKey() {
   just insert a prompt before #write-lines
   */
   if (userInput.trim().length !== 0) {
-    if (userInput.startsWith("echo ") && userInput.trim() !== "echo") {
-      const message = userInput.slice(4).trim();
+    if (userInput.trimStart().toLowerCase().startsWith("echo ") && userInput.toLowerCase().trim() !== "echo") {
+      const message = userInput.trimStart().slice(4).trim();
       writeLines([message, "<br>"]);
       USERINPUT.value = resetInput;
       userInput = resetInput;
       return
-    }
-    else if (userInput.startsWith("ad ") && userInput.trim() !== "ad") {
-      const dir = userInput.slice(2).trim();
-      switch (dir) {
-        case 'UIP':
-          writeLines(UIP);
-          break;
-
-        case 'POR':
-          writeLines(POR);
-          break;
-        case 'UUBP':
-          writeLines(UUBP);
-          break;
-        case 'UURM':
-          writeLines(UURM);
-          break;
-
-        default:
-          writeLines(["<br>", "Direktorij je nepostojeć ili ga nije moguće pristupit.", "<br>"]);
-          break;
-      }
-      USERINPUT.value = resetInput;
-      userInput = resetInput;
-      return
-
     } else {
       commandHandler(userInput.toLowerCase().trim());
     }
@@ -144,14 +111,16 @@ function enterKey() {
 
 function tabKey() {
   let currInput = USERINPUT.value;
+  const lowerCurrInput = currInput.toLowerCase();
 
   for (const ele of COMMANDS) {
-    if (ele.startsWith(currInput)) {
+    if (ele.toLowerCase().startsWith(lowerCurrInput)) {
       USERINPUT.value = ele;
-      return
+      return;
     }
   }
 }
+
 
 function arrowKeys(e: string) {
   switch (e) {
@@ -174,16 +143,27 @@ function arrowKeys(e: string) {
 
 function commandHandler(input: string) {
   switch (input) {
-    case 'about':
-      writeLines(ABOUT);
+    case 'aboutme':
+      writeLines(ABOUTME);
+      break;
+
+    case 'archive':
+      ARCHIVE.forEach((line: string, idx: number) => {
+        setTimeout(() => {
+          if (!mutWriteLines) return;
+
+          const paragraph = document.createElement("p");
+          paragraph.innerHTML = line;
+          paragraph.style.marginBottom = '5px';
+
+          mutWriteLines.parentNode!.insertBefore(paragraph, mutWriteLines);
+          scrollToBottom();
+        }, 40 * idx);
+      });
       break;
 
     case 'banner':
       writeLines(BANNER);
-      break;
-
-    case 'ad':
-      writeLines(AD);
       break;
 
     case 'cls':
@@ -232,6 +212,10 @@ function commandHandler(input: string) {
       }, 40 * HISTORY.length);
       break;
 
+    case 'info':
+      writeLines(INFO);
+      break;
+
     case 'projects':
       writeLines(PROJECTS);
       break;
@@ -241,25 +225,6 @@ function commandHandler(input: string) {
       setTimeout(() => {
         window.open(REPO_LINK, '_blank');
       }, 500);
-      break;
-
-    case 'time':
-      writeLines(TIME);
-      break;
-
-    case 'tree':
-      TREE.forEach((line: string, idx: number) => {
-        setTimeout(() => {
-          if (!mutWriteLines) return;
-
-          const paragraph = document.createElement("p");
-          paragraph.innerHTML = line;
-          paragraph.style.marginBottom = '5px';
-
-          mutWriteLines.parentNode!.insertBefore(paragraph, mutWriteLines);
-          scrollToBottom();
-        }, 40 * idx);
-      });
       break;
 
     default:

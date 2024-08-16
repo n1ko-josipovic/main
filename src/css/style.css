@@ -218,5 +218,12 @@ a.no-hover:hover {
 .tree-line {
   white-space: pre;
   margin-bottom: 10px !important;
-  /* Adjust this value as needed */
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+.info-value {
+  margin-left: 10px;
 }

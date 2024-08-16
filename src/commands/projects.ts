@@ -19,7 +19,7 @@ const createProject = (): string[] => {
   });
 
   projects.push("<br>");
-  projects.push(files);
+  projects.push("&nbsp;" + files);
   projects.push("<br>");
   return projects
 }
