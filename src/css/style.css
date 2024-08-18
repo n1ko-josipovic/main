@@ -164,6 +164,20 @@ a:hover {
   color: #FD9BDB;
 }
 
+.text-shadow-style {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 151px var(--border);
+}
+
+.content {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 151px var(--border);
+  color: #70FDFF;
+  cursor: pointer;
+}
+
 .output {
   font-weight: 600 !important;
 }
@@ -220,10 +234,19 @@ a.no-hover:hover {
   margin-bottom: 10px !important;
 }
 
-.bold-font {
+.highlighted {
   font-weight: bold;
+  color: #FF9951;
 }
 
-.info-value {
-  margin-left: 10px;
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-550 {
+  font-weight: 550;
+}
+
+.color-\[\#70FDFF\] {
+  color: #70FDFF;
 }

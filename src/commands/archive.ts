@@ -1,20 +1,15 @@
 const createArchive = (): string[] => {
     return [
         "<br>",
-        "&nbsp;Prikaz strukture arhiva.",
-        "&nbsp;Za sadržaj kliknite na odabrane direktorija.",
+        "&nbsp;<strong>Struktura arhiva:</strong><br>",
+        "&nbsp;&nbsp;<span class='highlighted'>Arhiv</span><br>",
+        "&nbsp;&nbsp;&nbsp;&nbsp;└─ I. razred<br>",
+        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\UIP")'>UIP</span><br>`,
+        "&nbsp;&nbsp;&nbsp;&nbsp;└─ II. razred<br>",
+        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\POR")'>POR</span><br>`,
+        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\UURM")'>UURM</span><br>`,
+        "&nbsp;&nbsp;&nbsp;&nbsp;└─ III. razred<br>",
         "<br>",
-        "&nbsp;arhiv",
-        "&nbsp;&nbsp;└── škola",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── prvi razred<br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── <span class='command' style='cursor: pointer;'>UIP</span><br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── drugi razred<br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── <span class='command' style='cursor: pointer;'>POR</span><br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── <span class='command' style='cursor: pointer;'>UURM</span><br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>",
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── treći razred<br>",
-        "<br>"
     ];
 };
 

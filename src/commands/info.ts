@@ -1,41 +1,70 @@
-const aDay = () => {
-    const today = new Date();
-    today.setDate(today.getDate() + 1);
+import command from '../../config.json' assert {type: 'json'};
 
-    const day = String(today.getDate()).padStart(2, '0');
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const year = today.getFullYear();
-
+const formatDate = (date: Date): string => {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear()).substr(2);
     return `${day}/${month}/${year}`;
 };
 
-const basicInfo = `
-    <br>
-    &nbsp;<span class='bold-font'>WEB sjedište v.3.0.1</span><br>
-    &nbsp;&nbsp;→&nbsp;<span class='bold-font'>v.1:</span>&nbsp;&nbsp;11/09/2023 - 14/11/2023 &nbsp;(The-Web)<br>
-    &nbsp;&nbsp;→&nbsp;<span class='bold-font'>v.2:</span>&nbsp;&nbsp;15/11/2023 - 09/08/2024 &nbsp;(WebSphere)<br>
-    &nbsp;&nbsp;→&nbsp;<span class='bold-font'>v.3:</span>&nbsp;&nbsp;10/08/2024 - ${aDay()} &nbsp;(NN)<br>
-`;
+const getTomorrowDate = (): string => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return formatDate(tomorrow);
+};
 
-const v_3_0_1 = `
-    &nbsp;&nbsp;<span class='bold-font'>v.3.0.1 (16/8/2024):</span><br>
-    &nbsp;&nbsp;&nbsp;→&nbsp; Dodane <span class='command'>'aboutme'</span> i <span class='command'>'info'</span> naredbe.<br>
-    &nbsp;&nbsp;&nbsp;→&nbsp; Izmijenjena README.md datoteka.<br>
-    &nbsp;&nbsp;&nbsp;→&nbsp; Poboljšan rad <span class='command'>'echo'</span> naredbe.<br>
-    <br>
-`;
+const HIGHLIGHTED = "highlighted";
+const COMMAND = "command";
+const SHADOW = "text-shadow-style";
+const ARROW_COLOR = "color-[#70FDFF]";
+const FONT_WEIGHT_550 = "font-weight-550";
 
+const versions = [
+    { version: "v.1", start: "11/09/23", end: "14/11/23", name: "The-Web" },
+    { version: "v.2", start: "15/11/23", end: "09/08/24", name: "WebSphere" },
+    { version: "v.3", start: "10/08/24", end: getTomorrowDate(), name: "NN" }
+];
+
+const basicInfo = [
+    "<br>",
+    `&nbsp;<span class='${HIGHLIGHTED}'>WEB sjedište ${command.version}</span>`,
+    "<br>",
+    ...versions.map(v => `&nbsp;&nbsp;<span class='${FONT_WEIGHT_550}' style='color: #32de84;'>${v.version}:</span>&nbsp;&nbsp;${v.start} - ${v.end}&nbsp;|&nbsp;${v.name}`)
+];
+
+const changeLog = [
+    {
+        version: "v.3.0.1",
+        date: "16/8/2024",
+        changes: [
+            "Izmijenjena README.md datoteka.",
+            `Poboljšan rad <span class='${COMMAND}'>'echo'</span> naredbe.`
+        ]
+    },
+    {
+        version: "v.3.0.2",
+        date: "18/8/2024",
+        changes: [
+            "Dodana stavka 'version' u config.json datoteci.",
+            `Ažurirana <span class='${COMMAND}'>'info'</span> naredba.`,
+            `Dodane dodatne funkcije.`
+        ]
+    }
+];
 
 const createInfo = (): string[] => {
     const info: string[] = [
-        basicInfo,
+        ...basicInfo,
         "<br>",
-        "&nbsp;<span class='bold-font'>Zapisnik o izmjenama:</span>",
-        "<br>",
-        v_3_0_1,
+        ...changeLog.flatMap(log => [
+            `&nbsp;&nbsp;<span style="text-decoration: underline;">${log.version}</span> (${log.date}):`,
+            ...log.changes.map(change => `&nbsp;&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp; ${change}`),
+            "<br>"
+        ])
     ];
 
     return info;
-}
+};
 
 export const INFO = createInfo();
+

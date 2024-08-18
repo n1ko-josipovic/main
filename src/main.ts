@@ -8,6 +8,9 @@ import { HELP } from "./commands/help";
 import { INFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
 
+import { POR } from "./content/por";
+import { UIP } from "./content/uip";
+import { UURM } from "./content/uurm";
 
 //mutWriteLines gets deleted and reassigned
 let mutWriteLines = document.getElementById("write-lines");
@@ -110,7 +113,7 @@ function enterKey() {
 }
 
 function tabKey() {
-  let currInput = USERINPUT.value;
+  let currInput = USERINPUT.value.trimStart();
   const lowerCurrInput = currInput.toLowerCase();
 
   for (const ele of COMMANDS) {
@@ -160,6 +163,16 @@ function commandHandler(input: string) {
           scrollToBottom();
         }, 40 * idx);
       });
+      break;
+
+    case 'archive\\por':
+      writeLines(POR);
+      break;
+    case 'archive\\uip':
+      writeLines(UIP);
+      break;
+    case 'archive\\uurm':
+      writeLines(UURM);
       break;
 
     case 'banner':
@@ -249,6 +262,10 @@ function displayText(item: string, idx: number) {
   }, 40 * idx);
 }
 
+function clickInputFunction(clickInput: string) {
+  USERINPUT.value = clickInput;
+}
+(window as any).clickInputFunction = clickInputFunction;
 
 const initEventListeners = () => {
   if (HOST) {

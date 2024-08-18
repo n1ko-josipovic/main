@@ -3,7 +3,7 @@ import command from '../../config.json' assert { type: 'json' };
 const createSpaces = (count: number) => '&nbsp;'.repeat(count);
 
 const formatInfo = (label: string, value: string, spaceCount: number) =>
-  `${createSpaces(2)}<span class="bold-font">${label}:</span><span class="info-value">${createSpaces(spaceCount)}${value}</span>`;
+  `${createSpaces(2)}<span class="highlighted">${label}:</span><span>${createSpaces(spaceCount)}${value}</span>`;
 
 const createAboutMe = (): string[] => {
   const about: string[] = [];
@@ -16,7 +16,7 @@ const createAboutMe = (): string[] => {
   about.push("<br>");
   about.push(formatInfo("Smjer", "Tehničar za računalstvo", 15));
   about.push("<br>");
-  about.push(formatInfo("Godina", "III. (2024/2025)", 14));
+  about.push(formatInfo("Godina", "III. (2024/25)", 14));
   about.push("<br>");
   about.push(formatInfo("Razredni odjel", "B", 6));
   about.push("<br>");

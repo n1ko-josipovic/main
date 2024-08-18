@@ -10,7 +10,6 @@
   "title": "Niko Josipović",
   "username": "strippy",
   "hostname": "tsrb",
-  "password": "tsrb1234",
   "repoLink": "https://github.com/n1ko-josipovic/main",
   "social": {
     "email": "niko.josipovic3@skole.hr",
@@ -46,5 +45,6 @@
     "commands": {
       "textColor": "#FD9BDB"
     }
-  }
+  },
+  "version": "v.3.0.2"
 }
