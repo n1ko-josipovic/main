@@ -47,7 +47,7 @@ const changeLog = [
         changes: [
             "Dodana stavka 'version' u config.json datoteci.",
             `Ažurirana <span class='${COMMAND}'>'info'</span> naredba.`,
-            `Dodane dodatne funkcije.`
+            `Dodana nova značajka.`
         ]
     }
 ];
