@@ -14,10 +14,10 @@ const getTomorrowDate = (): string => {
 };
 
 const HIGHLIGHTED = "highlighted";
+const LOWLIGHTED = "lowlighted";
 const COMMAND = "command";
 const SHADOW = "text-shadow-style";
 const ARROW_COLOR = "color-[#70FDFF]";
-const FONT_WEIGHT_550 = "font-weight-550";
 
 const versions = [
     { version: "v.1", start: "11/09/23", end: "14/11/23", name: "The-Web" },
@@ -29,7 +29,7 @@ const basicInfo = [
     "<br>",
     `&nbsp;<span class='${HIGHLIGHTED}'>WEB sjedište ${command.version}</span>`,
     "<br>",
-    ...versions.map(v => `&nbsp;&nbsp;<span class='${FONT_WEIGHT_550}' style='color: #32de84;'>${v.version}:</span>&nbsp;&nbsp;${v.start} - ${v.end}&nbsp;|&nbsp;${v.name}`)
+    ...versions.map(v => `&nbsp;&nbsp;<span class='${LOWLIGHTED}'>${v.version}:</span>&nbsp;&nbsp;${v.start} - ${v.end}&nbsp;|&nbsp;${v.name}`)
 ];
 
 const changeLog = [

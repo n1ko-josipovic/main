@@ -8,8 +8,9 @@ import { HELP } from "./commands/help";
 import { INFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
 
-import { POR } from "./content/por";
+
 import { UIP } from "./content/uip";
+import { UUBP } from "./content/uubp";
 import { UURM } from "./content/uurm";
 
 //mutWriteLines gets deleted and reassigned
@@ -71,7 +72,6 @@ function enterKey() {
   const resetInput = "";
   let newUserInput;
   userInput = USERINPUT.value;
-
   newUserInput = `<span class='output'>${userInput}</span>`;
 
   HISTORY.push(userInput);
@@ -165,11 +165,12 @@ function commandHandler(input: string) {
       });
       break;
 
-    case 'archive\\por':
-      writeLines(POR);
-      break;
+
     case 'archive\\uip':
       writeLines(UIP);
+      break;
+    case 'archive\\uubp':
+      writeLines(UUBP);
       break;
     case 'archive\\uurm':
       writeLines(UURM);
