@@ -166,13 +166,13 @@ function commandHandler(input: string) {
       break;
 
 
-    case 'archive\\uip':
+    case 'archive\\i. razred\\uip':
       writeLines(UIP);
       break;
-    case 'archive\\uubp':
+    case 'archive\\ii. razred\\uubp':
       writeLines(UUBP);
       break;
-    case 'archive\\uurm':
+    case 'archive\\ii. razred\\uurm':
       writeLines(UURM);
       break;
 

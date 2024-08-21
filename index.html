@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="src/css/css-reset.css">
   <link rel="stylesheet" href="src/css/style.css">
-  <link rel="icon" type="image/x-png" href="/res/logo.png" />
+  <link rel="icon" type="image/x-png" href="" id="logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1" />
   <meta name="author" content="Niko Josipović">
   <script src="https://kit.fontawesome.com/d5effce557.js" crossorigin="anonymous"></script>
@@ -13,6 +13,23 @@
 </head>
 
 <body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () =>
+    {
+      const logoElem = document.getElementById('logo');
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      const updateLogo = () =>
+      {
+        const isDark = mediaQuery.matches;
+        logoElem.href = isDark ? '/res/light.png' : '/res/dark.png';
+      };
+
+      updateLogo();
+
+      mediaQuery.addEventListener('change', updateLogo);
+    });
+  </script>
   <main id="main">
     <div id="bars">
       <div id="bar-1"></div>
