@@ -1,7 +1,7 @@
 # [WEB sjedište | Niko Josipović](https://joska.vercel.app/)
 
 <div align="center">
-  <img alt="banner" src="https://github.com/n1ko-josipovic/main/blob/main/res/banner.png">
+  <img alt="banner" src="https://github.com/n1ko-josipovic/main/blob/main/public/res/banner.png">
 </div>
 
 ## O projektu
