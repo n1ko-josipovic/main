@@ -22,6 +22,7 @@
       const updateLogo = () =>
       {
         const isDark = mediaQuery.matches;
+        console.log(isDark);
         logoElem.href = isDark ? '/res/light.png' : '/res/dark.png';
       };
 
