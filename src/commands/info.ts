@@ -49,6 +49,13 @@ const changeLog = [
             `Ažurirana <span class='${COMMAND}'>'info'</span> naredba.`,
             `Dodana nova značajka.`
         ]
+    },
+    {
+        version: "v.3.0.3",
+        date: "27/8/2024",
+        changes: [
+            "Promijenjen način rada sata."
+        ]
     }
 ];
 

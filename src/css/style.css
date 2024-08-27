@@ -120,6 +120,13 @@ a:hover {
   line-height: 36px;
   padding-top: 2.5px;
   text-align: center;
+  transition: all 1s ease;
+}
+
+#bar-1:hover {
+  background-color: var(--bg);
+  color: var(--border);
+  cursor: pointer;
 }
 
 #bar-2 {
@@ -139,7 +146,6 @@ a:hover {
   background-color: var(--border);
   margin-top: 3px;
 }
-
 
 #bar-5 {
   height: 1px;
@@ -187,7 +193,44 @@ a:hover {
   font-weight: 400;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
+  body {
+    font-size: 14px;
+    padding: 8px;
+    font-weight: 375;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  p {
+    line-height: 17px;
+  }
+
+  pre {
+    line-height: 10x !important;
+    font-size: 14px;
+  }
+
+  main {
+    border-width: 1px;
+  }
+
+  div {
+    line-height: 17px;
+  }
+
+  #terminal {
+    margin-left: 10px;
+  }
+
+  #input-line {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 600px) {
   body {
     font-size: 10px;
     padding: 2px;
