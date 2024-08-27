@@ -21,7 +21,7 @@ const ARROW_COLOR = "color-[#70FDFF]";
 
 const versions = [
     { version: "v.1", start: "11/09/23", end: "14/11/23", name: "The-Web" },
-    { version: "v.2", start: "15/11/23", end: "09/08/24", name: "WebSphere" },
+    { version: "v.2", start: "15/11/23", end: "27/08/24", name: "WebSphere" },
     { version: "v.3", start: "10/08/24", end: getTomorrowDate(), name: "NN" }
 ];
 
