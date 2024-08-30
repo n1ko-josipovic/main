@@ -16,7 +16,7 @@ const createAboutMe = (): string[] => {
   about.push("<br>");
   about.push(formatInfo("Smjer", "Tehničar za računalstvo", 15));
   about.push("<br>");
-  about.push(formatInfo("Godina", "III. (2024/25)", 14));
+  about.push(formatInfo("Godina", "III. (24/25)", 14));
   about.push("<br>");
   about.push(formatInfo("Razredni odjel", "B", 6));
   about.push("<br>");
