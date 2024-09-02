@@ -15,10 +15,10 @@ const createProject = (): string[] => {
     string += SPACE.repeat(23 - ele[0].length);
     string += ele[1];
     projects.push(string);
+    projects.push("<br>");
     string = '';
   });
 
-  projects.push("<br>");
   projects.push("&nbsp;" + files);
   projects.push("<br>");
   return projects
