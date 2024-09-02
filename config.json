@@ -21,6 +21,11 @@
       "Graphing Calculator",
       "WEB grafički kalkulator",
       "https://github.com/n1ko-josipovic/graph-calc"
+    ],
+    [
+      "Terminal e-Dnevnik",
+      "Pregled e-Dnevnik u terminalu",
+      "https://github.com/n1ko-josipovic/terminal.e-Dnevnik"
     ]
   ],
   "colors": {
