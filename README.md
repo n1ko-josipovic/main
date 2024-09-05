@@ -5,7 +5,7 @@
 </div>
 
 ## O projektu
-  Ovaj projekt, WEB sjedište, izrađen je za potrebe škole. Njegova primarna namjena je omogućiti objavljivanje školskih dokumenata, a nadam se da će biti korisna i drugim učenicima.
+  Ovaj projekt, WEB sjedište, izrađen je za potrebe škole. Njegova primarna namjena je omogućiti objavljivanje školskih dokumenata.
 Projekt se temelji na radu autora <a href="https://github.com/nasan016" target="_blank">nasan016</a> pod nazivom <a href="https://github.com/nasan016/webshell" target="_blank">Webshell</a>.
 Ovom prilikom želim izraziti zahvalnost autoru na dozvoli za korištenje i prilagodbu njegova rada.
 
