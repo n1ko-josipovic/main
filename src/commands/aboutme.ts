@@ -1,26 +1,22 @@
 import command from '../../config.json' assert { type: 'json' };
 
-const createSpaces = (count: number) => '&nbsp;'.repeat(count);
+const SHADOW = "text-shadow-style";
+const ARROW_COLOR = "color-[#70FDFF]";
 
-const formatInfo = (label: string, value: string, spaceCount: number) =>
-  `${createSpaces(2)}<span class="highlighted">${label}:</span><span>${createSpaces(spaceCount)}${value}</span>`;
+const createSpaces = (count: number) => '&nbsp;'.repeat(count);
 
 const createAboutMe = (): string[] => {
   const about: string[] = [];
 
   about.push("<br>");
-  about.push(`<p>&nbsp;${command.aboutGreeting} Ja sam Niko Josipović</p>`);
+  about.push(`<p>&nbsp;${command.aboutGreeting} Ja sam <span class="highlighted">Niko Josipović</span></p>`);
   about.push("<br>");
 
-  about.push(formatInfo("Škola", "Tehnička škola Ruđera Boškovića", 15));
+  about.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;Tehnička škola Ruđera Boškovića`);
+  about.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;Tehničar za računalstvo`);
   about.push("<br>");
-  about.push(formatInfo("Smjer", "Tehničar za računalstvo", 15));
-  about.push("<br>");
-  about.push(formatInfo("Godina", "III. (24/25)", 14));
-  about.push("<br>");
-  about.push(formatInfo("Razredni odjel", "B", 6));
-  about.push("<br>");
-  about.push(formatInfo("Redni broj", "10", 10));
+  about.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;III. godina (24/25), odjel B`);
+  about.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;Redni broj: 9`);
   about.push("<br>");
 
   let string = "";

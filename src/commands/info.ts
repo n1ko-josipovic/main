@@ -34,27 +34,36 @@ const basicInfo = [
 
 const changeLog = [
     {
-        version: "v.3.0.1",
+        version: "v3.0.1",
         date: "16/8/2024",
         changes: [
-            "Izmijenjena README.md datoteka.",
-            `Poboljšan rad <span class='${COMMAND}'>'echo'</span> naredbe.`
+            "Promijenjena README.md datoteka.",
+            `Poboljšana <span class='${COMMAND}'>'echo'</span> naredba.`
         ]
     },
     {
-        version: "v.3.0.2",
+        version: "v3.0.2",
         date: "18/8/2024",
         changes: [
             "Dodana stavka 'version' u config.json datoteci.",
-            `Ažurirana <span class='${COMMAND}'>'info'</span> naredba.`,
+            `Izmijenjen izgled <span class='${COMMAND}'>'info'</span> naredbe.`,
             `Dodana nova značajka.`
         ]
     },
     {
-        version: "v.3.0.3",
+        version: "v3.0.3",
         date: "27/8/2024",
         changes: [
             "Promijenjen način rada sata."
+        ]
+    },
+    {
+        version: "v3.1.0",
+        date: "9/9/2024",
+        changes: [
+            `Dodana naredba <span class='${COMMAND}'>'time'</span>.`,
+            `Izmijenjen izgled <span class='${COMMAND}'>'aboutme'</span> naredbe.`,
+            "..."
         ]
     }
 ];

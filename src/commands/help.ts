@@ -41,6 +41,10 @@ const helpObj = {
       "Pregled GitHub repozitorija."
     ],
     [
+      "'time'",
+      "Važno!"
+    ],
+    [
       "'clear'",
       "Očisti terminal."
     ]

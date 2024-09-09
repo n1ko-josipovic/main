@@ -7,19 +7,17 @@ import { ECHO } from "./commands/echo";
 import { HELP } from "./commands/help";
 import { INFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
-
+import { TIME } from "./commands/time";
 
 import { UIP } from "./content/uip";
 import { UUBP } from "./content/uubp";
 import { UURM } from "./content/uurm";
 
-//mutWriteLines gets deleted and reassigned
 let mutWriteLines = document.getElementById("write-lines");
 let historyIdx = 0
 let tempInput = ""
 let userInput: string;
 
-//WRITELINESCOPY is used to during the "clear" command
 const WRITELINESCOPY = mutWriteLines;
 const TERMINAL = document.getElementById("terminal");
 const USERINPUT = document.getElementById("user-input") as HTMLInputElement;
@@ -28,7 +26,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "clear"];
+const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "clear"];
 const HISTORY: string[] = [];
 
 const REPO_LINK = command.repoLink;
@@ -218,7 +216,7 @@ function commandHandler(input: string) {
 
       setTimeout(() => {
         const afterHistory = document.createElement("p");
-        afterHistory.innerHTML = "<br>";  // Creates an empty line
+        afterHistory.innerHTML = "<br>";
         if (mutWriteLines && mutWriteLines.parentNode) {
           mutWriteLines.parentNode.insertBefore(afterHistory, mutWriteLines);
         }
@@ -239,6 +237,10 @@ function commandHandler(input: string) {
       setTimeout(() => {
         window.open(REPO_LINK, '_blank');
       }, 500);
+      break;
+
+    case 'time':
+      writeLines(TIME);
       break;
 
     default:
