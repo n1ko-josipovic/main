@@ -34,7 +34,7 @@ const basicInfo = [
 
 const changeLog = [
     {
-        version: "v3.0.1",
+        version: "v.3.0.1",
         date: "16/8/2024",
         changes: [
             "Promijenjena README.md datoteka.",
@@ -42,7 +42,7 @@ const changeLog = [
         ]
     },
     {
-        version: "v3.0.2",
+        version: "v.3.0.2",
         date: "18/8/2024",
         changes: [
             "Dodana stavka 'version' u config.json datoteci.",
@@ -51,19 +51,26 @@ const changeLog = [
         ]
     },
     {
-        version: "v3.0.3",
+        version: "v.3.0.3",
         date: "27/8/2024",
         changes: [
             "Promijenjen način rada sata."
         ]
     },
     {
-        version: "v3.1.0",
+        version: "v.3.1.0",
         date: "9/9/2024",
         changes: [
             `Dodana naredba <span class='${COMMAND}'>'time'</span>.`,
             `Izmijenjen izgled <span class='${COMMAND}'>'aboutme'</span> naredbe.`,
             "..."
+        ]
+    },
+    {
+        version: "v.3.1.1",
+        date: "10/9/2024",
+        changes: [
+            `Proširena naredba <span class='${COMMAND}'>'archive'</span> uz malu preinaku dizajna.`,
         ]
     }
 ];
@@ -74,7 +81,7 @@ const createInfo = (): string[] => {
         "<br>",
         ...changeLog.flatMap(log => [
             `&nbsp;&nbsp;<span style="text-decoration: underline;">${log.version}</span> (${log.date}):`,
-            ...log.changes.map(change => `&nbsp;&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp; ${change}`),
+            ...log.changes.map(change => `&nbsp;&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;${change}`),
             "<br>"
         ])
     ];

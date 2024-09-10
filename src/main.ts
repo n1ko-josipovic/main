@@ -10,8 +10,17 @@ import { PROJECTS } from "./commands/projects";
 import { TIME } from "./commands/time";
 
 import { UIP } from "./content/uip";
+
+import { POR } from "./content/por";
 import { UUBP } from "./content/uubp";
 import { UURM } from "./content/uurm";
+
+import { DBP } from "./content/dbp";
+import { GR } from "./content/gr";
+import { MIK } from "./content/mik";
+import { OS } from "./content/os";
+import { RM } from "./content/rm";
+import { SJWP } from "./content/sjwp";
 
 let mutWriteLines = document.getElementById("write-lines");
 let historyIdx = 0
@@ -167,11 +176,32 @@ function commandHandler(input: string) {
     case 'archive\\i. razred\\uip':
       writeLines(UIP);
       break;
+    case 'archive\\ii. razred\\por':
+      writeLines(POR);
+      break;
     case 'archive\\ii. razred\\uubp':
       writeLines(UUBP);
       break;
     case 'archive\\ii. razred\\uurm':
       writeLines(UURM);
+      break;
+    case 'archive\\iii. razred\\dbp':
+      writeLines(DBP);
+      break;
+    case 'archive\\iii. razred\\gr':
+      writeLines(GR);
+      break;
+    case 'archive\\iii. razred\\mik':
+      writeLines(MIK);
+      break;
+    case 'archive\\iii. razred\\os':
+      writeLines(OS);
+      break;
+    case 'archive\\iii. razred\\rm':
+      writeLines(RM);
+      break;
+    case 'archive\\iii. razred\\sjwp':
+      writeLines(SJWP);
       break;
 
     case 'banner':
