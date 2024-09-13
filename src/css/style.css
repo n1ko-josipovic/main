@@ -4,12 +4,10 @@
 :root {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 200;
-  --bg: #0C0623;
-  --border: #FFADE2;
+  --bg: black;
+  --border: #8ce10b;
   --text: #F8DDE5;
   --prompt-default: #A5A7A7;
-  --prompt-1: #FE6BC9;
-  --prompt-2: #70FDFF;
 }
 
 @keyframes typing {
@@ -45,7 +43,7 @@ main {
   box-sizing: border-box;
   height: 100%;
   border: var(--border) solid 2px;
-  border-radius: 2px;
+  border-radius: 5px;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
@@ -59,7 +57,7 @@ main::-webkit-scrollbar {
 p {
   display: block;
   line-height: 22px;
-  animation: typing 0.5s steps(30, end);
+  animation: typing 0.75s steps(30, end);
   white-space: nowrap;
   overflow: hidden;
 }
@@ -77,7 +75,7 @@ pre {
   margin: 0;
   padding: 0;
   line-height: 20px !important;
-  color: #FF9951;
+  color: #F8DDE5;
   font-family: "ascii", monospace;
 }
 
@@ -89,7 +87,7 @@ input {
   resize: none;
   outline: none;
   font-size: 16px;
-  color: #FF7685;
+  color: #4287f5;
   caret-color: var(--prompt-default);
   width: 50%;
 }
@@ -103,54 +101,9 @@ a:hover {
   color: var(--bg);
 }
 
-#bars {
-  font-family: "Black Ops One", system-ui;
-  font-size: 20px;
-  position: -webkit-sticky;
-  position: sticky;
-  width: 100%;
-  top: 0;
-  background-color: var(--bg);
-}
-
-#bar-1 {
-  height: 36px;
-  background-color: var(--border);
-  color: var(--bg);
-  line-height: 36px;
-  padding-top: 2.5px;
-  text-align: center;
-  transition: all 1s ease;
-}
-
-#bar-1:hover {
-  background-color: var(--bg);
-  color: var(--border);
-  cursor: pointer;
-}
-
-#bar-2 {
-  height: 4px;
-  background-color: var(--border);
-  margin-top: 1px;
-}
-
-#bar-3 {
-  height: 3px;
-  background-color: var(--border);
-  margin-top: 2px;
-}
-
-#bar-4 {
-  height: 2px;
-  background-color: var(--border);
-  margin-top: 3px;
-}
-
-#bar-5 {
-  height: 1px;
-  background-color: var(--border);
-  margin-top: 4px;
+a.no-hover:hover {
+  background: none;
+  color: inherit;
 }
 
 #terminal {
@@ -167,7 +120,7 @@ a:hover {
   text-shadow:
     0 0 7px #fff,
     0 0 151px var(--border);
-  color: #FD9BDB;
+  color: #8ce10b;
 }
 
 .text-shadow-style {
@@ -188,9 +141,18 @@ a:hover {
   font-weight: 600 !important;
 }
 
-.keys {
-  color: #FF9951;
-  font-weight: 400;
+.highlighted {
+  color: #ff9e59;
+  font-weight: bold;
+}
+
+.lowlighted {
+  color: #32de84;
+  font-weight: 550;
+}
+
+.color-\[\#70FDFF\] {
+  color: #70FDFF;
 }
 
 @media (max-width: 700px) {
@@ -302,36 +264,4 @@ a:hover {
   #input-line {
     margin-left: 8px;
   }
-}
-
-a.no-hover:hover {
-  background: none;
-  color: inherit;
-}
-
-.tree-line {
-  white-space: pre;
-  margin-bottom: 10px !important;
-}
-
-.highlighted {
-  font-weight: bold;
-  color: #FF9951;
-}
-
-.lowlighted {
-  font-weight: 550;
-  color: #32de84;
-}
-
-.font-weight-500 {
-  font-weight: 500;
-}
-
-.font-weight-550 {
-  font-weight: 550;
-}
-
-.color-\[\#70FDFF\] {
-  color: #70FDFF;
 }

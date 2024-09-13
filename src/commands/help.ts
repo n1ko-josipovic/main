@@ -58,7 +58,7 @@ const createHelp = (): string[] => {
   helpObj.commands.forEach((ele) => {
     const SPACE = "&nbsp;";
     let string = "";
-    string += SPACE.repeat(2);
+    string += SPACE.repeat(1);
     string += "<span class='command'>";
     string += ele[0];
     string += "</span>";
@@ -68,9 +68,9 @@ const createHelp = (): string[] => {
   })
 
   help.push("<br>");
-  help.push("&nbsp;Pritisnite <span class='keys'>[Tab]</span> za automatsko dovršavanje naredbe.");
-  help.push("&nbsp;Pritisnite <span class='keys'>[Esc]</span> za brisanje linije unosa.");
-  help.push("&nbsp;Pritisnite <span class='keys'>[↑][↓]</span> za pomicanje kroz povijest naredbi.");
+  help.push("&nbsp;Pritisnite <span class='highlighted'>[Tab]</span> za automatsko dovršavanje naredbe.");
+  help.push("&nbsp;Pritisnite <span class='highlighted'>[Esc]</span> za brisanje linije unosa.");
+  help.push("&nbsp;Pritisnite <span class='highlighted'>[↑][↓]</span> za pomicanje kroz povijest naredbi.");
   help.push("<br>");
   return help
 }

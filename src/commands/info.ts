@@ -72,6 +72,14 @@ const changeLog = [
         changes: [
             `Proširena naredba <span class='${COMMAND}'>'archive'</span> uz malu preinaku dizajna.`,
         ]
+    },
+    {
+        version: "v.3.2.0",
+        date: "13/9/2024",
+        changes: [
+            `U potpunosti promijenjen izgled WEB sjedišta.`,
+            `Izbrisan sat.`
+        ]
     }
 ];
 

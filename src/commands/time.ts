@@ -29,7 +29,7 @@ const createTime = () => {
         const difference = Number(praznikDate) - Number(today);
 
         if (difference > 0) {
-            rezultati.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;${praznik}:` + SPACE.repeat(23 - praznik.length) + `${datum}`);
+            rezultati.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<span class='lowlighted'>${praznik}</span>` + SPACE.repeat(23 - praznik.length) + `${datum}`);
         }
 
         if (nextPraznik === "" && nextPraznikDate === null) {
@@ -41,7 +41,7 @@ const createTime = () => {
 
     rezultati.push("<br>");
     if (nextPraznikDate) {
-        rezultati.push(`&nbsp;Sljedeće: <span style="text-decoration: underline;">${nextPraznik}</span> ~ ${differenceSaved} dana do`);
+        rezultati.push(`&nbsp;Sljedeće: <span class='highlighted'>${nextPraznik}</span> ~ ${differenceSaved} dana do`);
     } else {
         rezultati.push("&nbsp;Završena nastavna godina!");
     }

@@ -9,7 +9,7 @@ const createAboutMe = (): string[] => {
   const about: string[] = [];
 
   about.push("<br>");
-  about.push(`<p>&nbsp;${command.aboutGreeting} Ja sam <span class="highlighted">Niko Josipović</span></p>`);
+  about.push(`<p>&nbsp;${command.aboutGreeting} Ja sam <span class="lowlighted">Niko Josipović</span></p>`);
   about.push("<br>");
 
   about.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;Tehnička škola Ruđera Boškovića`);

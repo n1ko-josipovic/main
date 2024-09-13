@@ -38,6 +38,9 @@ const PROMPT = document.getElementById("prompt");
 const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "clear"];
 const HISTORY: string[] = [];
 
+const SHADOW = "text-shadow-style";
+const ARROW_COLOR = "color-[#70FDFF]";
+
 const REPO_LINK = command.repoLink;
 
 const scrollToBottom = () => {
@@ -238,7 +241,7 @@ function commandHandler(input: string) {
           if (!mutWriteLines) return;
 
           const p = document.createElement("p");
-          p.innerHTML = "&nbsp;→&nbsp;" + item;
+          p.innerHTML = `&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;` + item;
           mutWriteLines.parentNode!.insertBefore(p, mutWriteLines);
           scrollToBottom();
         }, 40 * idx);
@@ -331,19 +334,3 @@ const initEventListeners = () => {
 }
 
 initEventListeners();
-
-function updateTime() {
-  const now = new Date();
-  const hours = String(now.getHours()).padStart(2, '0');
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const seconds = String(now.getSeconds()).padStart(2, '0');
-  const timeString = `${hours}:${minutes}:${seconds}`;
-
-  const timeElement = document.getElementById('bar-1');
-  if (timeElement) {
-    timeElement.textContent = timeString;
-  }
-}
-
-updateTime();
-setInterval(updateTime, 1000);
