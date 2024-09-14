@@ -42,7 +42,11 @@ const helpObj = {
     ],
     [
       "'time'",
-      "Važno!"
+      "Koliko do praznika."
+    ],
+    [
+      "'weather'",
+      "Vremenska prognoza."
     ],
     [
       "'clear'",
@@ -68,9 +72,9 @@ const createHelp = (): string[] => {
   })
 
   help.push("<br>");
-  help.push("&nbsp;Pritisnite <span class='highlighted'>[Tab]</span> za automatsko dovršavanje naredbe.");
-  help.push("&nbsp;Pritisnite <span class='highlighted'>[Esc]</span> za brisanje linije unosa.");
-  help.push("&nbsp;Pritisnite <span class='highlighted'>[↑][↓]</span> za pomicanje kroz povijest naredbi.");
+  help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[Tab]</span> za automatsko dovršavanje naredbe.");
+  help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[Esc]</span> za brisanje linije unosa.");
+  help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[↑][↓]</span> za pomicanje kroz povijest naredbi.");
   help.push("<br>");
   return help
 }

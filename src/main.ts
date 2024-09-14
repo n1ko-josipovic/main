@@ -3,7 +3,6 @@ import { ABOUTME } from "./commands/aboutme";
 import { ARCHIVE } from "./commands/archive";
 import { BANNER } from "./commands/banner";
 import { DEFAULT } from "./commands/default";
-import { ECHO } from "./commands/echo";
 import { HELP } from "./commands/help";
 import { INFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
@@ -35,7 +34,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "clear"];
+const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "weather", "clear"];
 const HISTORY: string[] = [];
 
 const SHADOW = "text-shadow-style";
@@ -108,12 +107,52 @@ function enterKey() {
   */
   if (userInput.trim().length !== 0) {
     if (userInput.trimStart().toLowerCase().startsWith("echo ") && userInput.toLowerCase().trim() !== "echo") {
-      const message = userInput.trimStart().slice(4).trim();
+      const message = userInput.trimStart().slice(5);
       writeLines([message, "<br>"]);
       USERINPUT.value = resetInput;
       userInput = resetInput;
-      return
-    } else {
+      return;
+    }
+
+    else if (userInput.trimStart().toLowerCase().startsWith("weather ") && userInput.toLowerCase().trim() !== "weather") {
+      const weatherCity = userInput.trimStart().slice(8);
+
+      const getWeather = async (city: string) => {
+        try {
+          const response = await fetch(`https://wttr.in/${city}?ATm`);
+
+          if (!response.ok) {
+            throw new Error();
+          }
+
+          let weatherData = await response.text();
+
+          let weatherLines = weatherData.split('\n');
+
+          if (window.innerWidth < 1800) {
+            weatherLines = weatherLines.slice(0, 7);
+          } else {
+            weatherLines = weatherLines.slice(0, -3);
+            weatherLines[weatherLines.length - 2] += '\n';
+          }
+
+          weatherLines = weatherLines.map(line => `&nbsp;${line}`);
+          weatherData = `<pre>${weatherLines.join('\n')}</pre>`;
+          writeLines(["<br>", weatherData, "<br>"]);
+
+        } catch (error: any) {
+          writeLines(["<br>", `&nbsp;Greška u prikupljanju prognoze za grad: <span class='lowlighted'>${city}</span>`, "<br>"]);
+        }
+      };
+
+      getWeather(weatherCity);
+
+      USERINPUT.value = resetInput;
+      userInput = resetInput;
+      return;
+    }
+
+    else {
       commandHandler(userInput.toLowerCase().trim());
     }
   }
@@ -179,6 +218,7 @@ function commandHandler(input: string) {
     case 'archive\\i. razred\\uip':
       writeLines(UIP);
       break;
+
     case 'archive\\ii. razred\\por':
       writeLines(POR);
       break;
@@ -188,6 +228,7 @@ function commandHandler(input: string) {
     case 'archive\\ii. razred\\uurm':
       writeLines(UURM);
       break;
+
     case 'archive\\iii. razred\\dbp':
       writeLines(DBP);
       break;
@@ -222,7 +263,7 @@ function commandHandler(input: string) {
       break;
 
     case 'echo':
-      writeLines(ECHO);
+      writeLines(["<br>", "&nbsp;Korištenje: echo [poruka]. Primjer: echo Pozdrav!", "<br>"]);
       break;
 
     case 'help':
@@ -274,6 +315,10 @@ function commandHandler(input: string) {
 
     case 'time':
       writeLines(TIME);
+      break;
+
+    case 'weather':
+      writeLines(["<br>", "&nbsp;Korištenje: weather [grad]. Primjer: weather Zagreb", "<br>"]);
       break;
 
     default:

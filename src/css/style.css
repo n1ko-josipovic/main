@@ -143,12 +143,12 @@ a.no-hover:hover {
 
 .highlighted {
   color: #ff9e59;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .lowlighted {
   color: #32de84;
-  font-weight: 550;
+  font-weight: 450;
 }
 
 .color-\[\#70FDFF\] {
@@ -209,7 +209,7 @@ a.no-hover:hover {
 
   pre {
     line-height: 12px !important;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   main {
@@ -246,7 +246,7 @@ a.no-hover:hover {
 
   pre {
     line-height: 11px !important;
-    font-size: 8px;
+    font-size: 9px;
   }
 
   main {

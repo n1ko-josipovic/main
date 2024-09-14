@@ -1,8 +1,4 @@
 const createTime = () => {
-    const SPACE = "&nbsp;";
-    const SHADOW = "text-shadow-style";
-    const ARROW_COLOR = "color-[#70FDFF]";
-
     const praznici = {
         "Svi sveti": "01. 11.",
         "Dan sjećanja": "18. 11.",
@@ -16,32 +12,24 @@ const createTime = () => {
 
     const rezultati = ["<br>"];
     let nextPraznik = "";
-    let nextPraznikDate = null;
-    let differenceSaved = 0;
-
-    rezultati.push("&nbsp;Nastavna godina: 24/25.");
-    rezultati.push("<br>");
+    let differenceInDays = 0;
 
     for (const [praznik, datum] of Object.entries(praznici)) {
         const [day, month] = datum.split('.').map(Number);
         const praznikDate = new Date(month > 8 ? 2024 : 2025, month - 1, day);
         const today = new Date();
+
         const difference = Number(praznikDate) - Number(today);
 
-        if (difference > 0) {
-            rezultati.push(`&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<span class='lowlighted'>${praznik}</span>` + SPACE.repeat(23 - praznik.length) + `${datum}`);
-        }
-
-        if (nextPraznik === "" && nextPraznikDate === null) {
+        if (difference > 0 && nextPraznik === "") {
             nextPraznik = praznik;
-            nextPraznikDate = praznikDate;
-            differenceSaved = Math.ceil(difference / (1000 * 60 * 60 * 24));
+            differenceInDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
+            break;
         }
     }
 
-    rezultati.push("<br>");
-    if (nextPraznikDate) {
-        rezultati.push(`&nbsp;Sljedeće: <span class='highlighted'>${nextPraznik}</span> ~ ${differenceSaved} dana do`);
+    if (nextPraznik !== "") {
+        rezultati.push(`&nbsp;<span class='lowlighted' style='font-weight: 450;'>${nextPraznik}</span> ~ ${differenceInDays} dana do`);
     } else {
         rezultati.push("&nbsp;Završena nastavna godina!");
     }
