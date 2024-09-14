@@ -61,7 +61,7 @@ const changeLog = [
         version: "v.3.1.0",
         date: "9/9/2024",
         changes: [
-            `Dodana naredba <span class='${COMMAND}'>'time'</span>.`,
+            `Nova naredba, <span class='${COMMAND}'>'time'</span>!`,
             `Izmijenjen izgled <span class='${COMMAND}'>'aboutme'</span> naredbe.`,
             "..."
         ]
@@ -77,8 +77,17 @@ const changeLog = [
         version: "v.3.2.0",
         date: "13/9/2024",
         changes: [
-            `U potpunosti promijenjen izgled WEB sjedišta.`,
+            `U potpunosti promijenjen izgled WEB sjedišta!`,
             `Izbrisan sat.`
+        ]
+    },
+    {
+        version: "v.3.2.1",
+        date: "14/9/2024",
+        changes: [
+            `Dodan SEO (Search Engine Optimization)!`,
+            `Nova naredba, <span class='${COMMAND}'>'weather'</span>!`,
+            `Promijenjena naredba, <span class='${COMMAND}'>'time'</span>.`
         ]
     }
 ];
