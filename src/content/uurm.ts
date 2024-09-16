@@ -7,7 +7,7 @@ const createUurm = (): string[] => {
 
     return [
         "<br>",
-        `&nbsp;<a href="http://kristinka-blazeka-blog.from.hr/?page_id=1289" target="_blank" class="no-hover" style="text-decoration: none;"><span class='${HIGHLIGHTED}'>Uvod u računalne mreže</span></a>`,
+        `&nbsp;<a href="http://kristinka-blazeka-blog.from.hr/" target="_blank" class="no-hover" style="text-decoration: none;"><span class='${HIGHLIGHTED}'>Uvod u računalne mreže</span></a>`,
         "<br>",
         `&nbsp;&nbsp;<span class='${LOWLIGHTED}'>Laboratorijske vježbe:</span>`,
         "<br>",
