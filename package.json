@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.0"
+    "typescript": "^5.6.2",
+    "vite": "^5.4.7"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
