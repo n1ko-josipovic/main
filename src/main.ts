@@ -34,7 +34,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "weather", "clear"];
+const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "translate", "weather", "clear"];
 const HISTORY: string[] = [];
 
 const SHADOW = "text-shadow-style";
@@ -108,7 +108,7 @@ function enterKey() {
   if (userInput.trim().length !== 0) {
     if (userInput.trimStart().toLowerCase().startsWith("echo ") && userInput.toLowerCase().trim() !== "echo") {
       const message = userInput.trimStart().slice(5);
-      writeLines([message, "<br>"]);
+      writeLines(["<br>", message, "<br>"]);
       USERINPUT.value = resetInput;
       userInput = resetInput;
       return;
@@ -146,6 +146,37 @@ function enterKey() {
       };
 
       getWeather(weatherCity);
+
+      USERINPUT.value = resetInput;
+      userInput = resetInput;
+      return;
+    }
+
+    else if (userInput.trimStart().toLowerCase().startsWith("translate ") && userInput.toLowerCase().trim() !== "translate") {
+      const translateText = userInput.trimStart().slice(10);
+
+      const getTranslation = async (TText: string) => {
+        let translationURL = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(TText)}`;
+
+        try {
+          const response = await fetch(translationURL);
+          const json = await response.json();
+
+          if (json && json[0]) {
+            const translationText = json[0].map((item: any[]) => item[0]).join("");
+            const translationData = `<pre style="white-space: pre-wrap;">${translationText}</pre>`;
+
+            writeLines(["<br>", translationData, "<br>"]);
+
+          } else {
+            writeLines(["<br>", `&nbsp;Translation not found.`, "<br>"]);
+          }
+        } catch (error) {
+          writeLines(["<br>", `&nbsp;Error in fetching translation.`, "<br>"]);
+        }
+      };
+
+      getTranslation(translateText);
 
       USERINPUT.value = resetInput;
       userInput = resetInput;
@@ -315,6 +346,10 @@ function commandHandler(input: string) {
 
     case 'time':
       writeLines(TIME);
+      break;
+
+    case 'translate':
+      writeLines(["<br>", "&nbsp;Usage: translate [text]. Example: translate Pozdrav!", "<br>"]);
       break;
 
     case 'weather':

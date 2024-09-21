@@ -89,6 +89,13 @@ const changeLog = [
             `Nova naredba, <span class='${COMMAND}'>'weather'</span>!`,
             `Promijenjena naredba, <span class='${COMMAND}'>'time'</span>.`
         ]
+    },
+    {
+        version: "v.3.2.2",
+        date: "21/9/2024",
+        changes: [
+            `Nova naredba, <span class='${COMMAND}'>'translate'</span>!`
+        ]
     }
 ];
 

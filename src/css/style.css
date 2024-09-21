@@ -59,7 +59,7 @@ p {
   line-height: 22px;
   animation: typing 0.75s steps(30, end);
   white-space: nowrap;
-  overflow: hidden;
+
 }
 
 div {
@@ -72,6 +72,7 @@ div {
 }
 
 pre {
+
   margin: 0;
   padding: 0;
   line-height: 20px !important;

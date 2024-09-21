@@ -29,9 +29,9 @@ const createTime = () => {
     }
 
     if (nextPraznik !== "") {
-        rezultati.push(`&nbsp;<span class='lowlighted' style='font-weight: 450;'>${nextPraznik}</span> ~ ${differenceInDays} dana do`);
+        rezultati.push(`<span class='lowlighted' style='font-weight: 450;'>${nextPraznik}</span> ~ ${differenceInDays} dana do`);
     } else {
-        rezultati.push("&nbsp;Završena nastavna godina!");
+        rezultati.push("Završena nastavna godina!");
     }
     rezultati.push("<br>");
 

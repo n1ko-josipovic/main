@@ -45,6 +45,10 @@ const helpObj = {
       "Koliko do praznika."
     ],
     [
+      "'translate'",
+      "Translate croatian to english."
+    ],
+    [
       "'weather'",
       "Vremenska prognoza."
     ],
