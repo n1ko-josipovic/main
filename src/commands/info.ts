@@ -87,7 +87,7 @@ export const downloadINFO = (): void => {
                 version: "v.3.2.3",
                 date: "29/9/2024",
                 changes: [
-                    "Promijenjene boje WEB stranice!",
+                    "Promijenjen sustav boja WEB sjedišta!",
                     "Nova naredba, 'password'!"
                 ]
             }
