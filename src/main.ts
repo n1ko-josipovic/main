@@ -290,10 +290,12 @@ function commandHandler(input: string) {
       writeLines(["<br>", "&nbsp;Korištenje: echo [poruka]. Primjer: echo Pozdrav!", "<br>"]);
       break;
 
+    case '?':
     case 'help':
       writeLines(HELP);
       break;
-
+      
+    case '???':
     case 'help+':
       writeLines(HELP_);
       break;
@@ -332,7 +334,7 @@ function commandHandler(input: string) {
       break;
 
     case 'password':
-      writeLines(["<br>", "&nbsp;Usage: password [duljina]. Example: password 10", "<br>"]);
+      writeLines(["<br>", "&nbsp;Korištenje: password [duljina]. Primjer: password 10", "<br>"]);
       break;
 
     case 'projects':
