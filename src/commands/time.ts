@@ -29,7 +29,7 @@ const createTime = () => {
     }
 
     if (nextPraznik !== "") {
-        rezultati.push(`<span class='lowlighted' style='font-weight: 450;'>${nextPraznik}</span> ~ ${differenceInDays} dana do`);
+        rezultati.push(`<span class='lowlighted'>${nextPraznik}</span> ~ ${differenceInDays} dana do`);
     } else {
         rezultati.push("Završena nastavna godina!");
     }

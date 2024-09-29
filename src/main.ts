@@ -4,7 +4,8 @@ import { ARCHIVE } from "./commands/archive";
 import { BANNER } from "./commands/banner";
 import { DEFAULT } from "./commands/default";
 import { HELP } from "./commands/help";
-import { INFO } from "./commands/info";
+import { HELP_ } from "./commands/help+";
+import { downloadINFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
 import { TIME } from "./commands/time";
 
@@ -14,10 +15,6 @@ import { POR } from "./content/por";
 import { UUBP } from "./content/uubp";
 import { UURM } from "./content/uurm";
 
-import { DBP } from "./content/dbp";
-import { GR } from "./content/gr";
-import { MIK } from "./content/mik";
-import { OS } from "./content/os";
 import { RM } from "./content/rm";
 import { SJWP } from "./content/sjwp";
 
@@ -34,7 +31,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "projects", "repo", "time", "translate", "weather", "clear"];
+const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "password", "projects", "repo", "time", "translate", "weather", "clear"];
 const HISTORY: string[] = [];
 
 const SHADOW = "text-shadow-style";
@@ -183,6 +180,25 @@ function enterKey() {
       return;
     }
 
+    else if (userInput.trimStart().toLowerCase().startsWith("password ") && userInput.toLowerCase().trim() !== "password") {
+      const passwordLenght = Number(userInput.trimStart().slice(9)) % 33;
+      console.log(passwordLenght);
+
+      const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%&*()_[]{}|;:,.<>?";
+      let password = "";
+
+      for (let i = 0; i < passwordLenght; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+      }
+      console.log(password.length)
+      writeLines(["<br>", `&nbsp;Zaporka: <span class='lowlighted' onclick='copyFunction()' id='copyText' style='cursor: pointer;'>${password}</span>`, "<br>"]);
+
+      USERINPUT.value = resetInput;
+      userInput = resetInput;
+      return;
+    }
+
     else {
       commandHandler(userInput.toLowerCase().trim());
     }
@@ -231,18 +247,7 @@ function commandHandler(input: string) {
       break;
 
     case 'archive':
-      ARCHIVE.forEach((line: string, idx: number) => {
-        setTimeout(() => {
-          if (!mutWriteLines) return;
-
-          const paragraph = document.createElement("p");
-          paragraph.innerHTML = line;
-          paragraph.style.marginBottom = '5px';
-
-          mutWriteLines.parentNode!.insertBefore(paragraph, mutWriteLines);
-          scrollToBottom();
-        }, 40 * idx);
-      });
+      writeLines(ARCHIVE);
       break;
 
 
@@ -260,18 +265,6 @@ function commandHandler(input: string) {
       writeLines(UURM);
       break;
 
-    case 'archive\\iii. razred\\dbp':
-      writeLines(DBP);
-      break;
-    case 'archive\\iii. razred\\gr':
-      writeLines(GR);
-      break;
-    case 'archive\\iii. razred\\mik':
-      writeLines(MIK);
-      break;
-    case 'archive\\iii. razred\\os':
-      writeLines(OS);
-      break;
     case 'archive\\iii. razred\\rm':
       writeLines(RM);
       break;
@@ -299,6 +292,10 @@ function commandHandler(input: string) {
 
     case 'help':
       writeLines(HELP);
+      break;
+
+    case 'help+':
+      writeLines(HELP_);
       break;
 
     case 'history':
@@ -330,7 +327,12 @@ function commandHandler(input: string) {
       break;
 
     case 'info':
-      writeLines(INFO);
+      writeLines(["Preuzimanje versions-log.json datoteke u tijeku...", "<br>"]);
+      downloadINFO();
+      break;
+
+    case 'password':
+      writeLines(["<br>", "&nbsp;Usage: password [duljina]. Example: password 10", "<br>"]);
       break;
 
     case 'projects':
@@ -349,7 +351,7 @@ function commandHandler(input: string) {
       break;
 
     case 'translate':
-      writeLines(["<br>", "&nbsp;Usage: translate [text]. Example: translate Pozdrav!", "<br>"]);
+      writeLines(["<br>", "&nbsp;Usage: translate [tekst]. Example: translate Pozdrav!", "<br>"]);
       break;
 
     case 'weather':
@@ -382,6 +384,15 @@ function clickInputFunction(clickInput: string) {
   USERINPUT.value = clickInput;
 }
 (window as any).clickInputFunction = clickInputFunction;
+
+function copyFunction() {
+  var copyText = document.getElementById("copyText");
+  if (copyText) {
+    navigator.clipboard.writeText(copyText.innerHTML);
+  }
+  alert("Zaporka uspješno kopirana u međuspremnik!");
+}
+(window as any).copyFunction = copyFunction;
 
 const initEventListeners = () => {
   if (HOST) {

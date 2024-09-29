@@ -2,7 +2,7 @@ const createPor = (): string[] => {
 
     return [
         "<br>",
-        `&nbsp;¯\\_(ツ)_/¯`,
+        `¯\\_(ツ)_/¯`,
         "<br>"
     ]
 }

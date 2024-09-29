@@ -38,8 +38,8 @@
     },
     "prompt": {
       "default": "#A5A7A7",
-      "user": "#ffb900",
-      "host": "#8ce10b",
+      "user": "#F2C18D",
+      "host": "#95D2B3",
       "input": "#4287f5"
     },
     "link": {
@@ -48,8 +48,8 @@
       "highlightText": "black"
     },
     "commands": {
-      "textColor": "#8ce10b"
+      "textColor": "#95D2B3"
     }
   },
-  "version": "v.3.2.2"
+  "version": "v.3.2.3"
 }

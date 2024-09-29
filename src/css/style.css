@@ -118,10 +118,11 @@ a.no-hover:hover {
 }
 
 .command {
+  color: #95D2B3;
   text-shadow:
-    0 0 7px #fff,
-    0 0 151px var(--border);
-  color: #8ce10b;
+    0 0 2px blue,
+    0 0 0px #95D2B3,
+    0 0 10px #fff;
 }
 
 .text-shadow-style {
@@ -130,26 +131,8 @@ a.no-hover:hover {
     0 0 151px var(--border);
 }
 
-.content {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 151px var(--border);
-  color: #70FDFF;
-  cursor: pointer;
-}
-
 .output {
   font-weight: 600 !important;
-}
-
-.highlighted {
-  color: #ff9e59;
-  font-weight: 500;
-}
-
-.lowlighted {
-  color: #32de84;
-  font-weight: 450;
 }
 
 .color-\[\#70FDFF\] {
@@ -264,5 +247,75 @@ a.no-hover:hover {
 
   #input-line {
     margin-left: 8px;
+  }
+}
+
+.highlighted {
+  color: #F2C18D;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.highlighted:hover {
+  color: #FF9874;
+}
+
+.lowlighted {
+  color: #B7E0FF;
+  display: inline-block;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.lowlighted:hover {
+  color: #7695FF;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 4px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+li::before {
+  content: none;
+}
+
+.archiveElem {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px var(--border),
+    0 0 15px #70FDFF;
+  color: #70FDFF;
+  cursor: pointer;
+  margin-left: 20px;
+  display: inline-block;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.archiveElem:hover {
+  text-decoration: underline;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 20px #70FDFF,
+    0 0 30px #70FDFF;
+  color: #a4ffff;
+}
+
+.archiveElem,
+.lowlighted,
+.highlighted {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }

@@ -1,36 +1,20 @@
 const helpObj = {
   "commands": [
     [
-      "'archive'",
-      "Prikaz arhiva."
-    ],
-    [
-      "",
-      "<br>"
-    ],
-    [
       "'aboutme'",
       "Tko sam ja?",
     ],
     [
-      "'banner'",
-      "Prikaz natpisa."
-    ],
-    [
-      "'echo'",
-      "Ispis željene poruke."
+      "'archive'",
+      "Prikaz arhiva."
     ],
     [
       "'help'",
       "Dostupne naredbe i značajke."
     ],
     [
-      "'history'",
-      "Prikaz korištenih naredbi."
-    ],
-    [
-      "'info'",
-      "O WEB sjedištu.",
+      "'help+'",
+      "Ostale naredbe."
     ],
     [
       "'projects'",
@@ -39,18 +23,6 @@ const helpObj = {
     [
       "'repo'",
       "Pregled GitHub repozitorija."
-    ],
-    [
-      "'time'",
-      "Koliko do praznika."
-    ],
-    [
-      "'translate'",
-      "Translate croatian to english."
-    ],
-    [
-      "'weather'",
-      "Vremenska prognoza."
     ],
     [
       "'clear'",

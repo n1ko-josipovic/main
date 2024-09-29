@@ -6,9 +6,9 @@ const createUip = (): string[] => {
         "<br>",
         `&nbsp;<span class='${HIGHLIGHTED}'>Upotreba informacijske tehnologije u uredskom poslovanju</span>`,
         "<br>",
-        `&nbsp;&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
+        `&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
         "<br>",
-        `&nbsp;&nbsp;&nbsp;<a href="arhiv/I. razred/UIP/šah.pdf" target="_blank">Povijest i utjecaj šaha</a>`,
+        `&nbsp;&nbsp;<a href="arhiv/I. razred/UIP/šah.pdf" target="_blank">Povijest i utjecaj šaha</a>`,
         "<br>"
     ]
 }

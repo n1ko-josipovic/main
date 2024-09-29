@@ -1,27 +1,30 @@
 const createArchive = (): string[] => {
     return [
+        "<div class='archive-container'>",
         "<br>",
-        "&nbsp;<span class='highlighted'>SŠ arhiv</span><br>",
-        "&nbsp;&nbsp;└─ <span class='lowlighted'>I. razred</span><br>",
-        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\I. razred\\\\UIP")'>UIP</span><br>`,
-        "&nbsp;&nbsp;└─ <span class='lowlighted'>II. razred</span><br>",
-        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\II. razred\\\\UUBP")'>UUBP</span><br>`,
-        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\II. razred\\\\UURM")'>UURM</span><br>`,
-        "&nbsp;&nbsp;└─ <span class='lowlighted'>III. razred</span><br>",
-        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\RM")'>RM</span><br>`,
-        `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\SJWP")'>SJWP</span><br>`,
+
+        "<ul>",
+        "<li><span class='lowlighted' style='color: #E3F4F4'>I. razred</span>",
+        "<ul>",
+        `<li><span class='archiveElem' onclick='clickInputFunction("archive\\\\I. razred\\\\UIP")'>UIP</span></li>`,
+        "</ul>",
+        "</li>",
+        "<li><span class='lowlighted' style='color: #E3F4F4'>II. razred</span>",
+        "<ul>",
+        `<li><span class='archiveElem' onclick='clickInputFunction("archive\\\\II. razred\\\\UUBP")'>UUBP</span></li>`,
+        `<li><span class='archiveElem' onclick='clickInputFunction("archive\\\\II. razred\\\\UURM")'>UURM</span></li>`,
+        "</ul>",
+        "</li>",
+        "<li><span class='lowlighted' style='color: #E3F4F4'>III. razred</span>",
+        "<ul>",
+        `<li><span class='archiveElem' onclick='clickInputFunction("archive\\\\III. razred\\\\RM")'>RM</span></li>`,
+        `<li><span class='archiveElem' onclick='clickInputFunction("archive\\\\III. razred\\\\SJWP")'>SJWP</span></li>`,
+        "</ul>",
+        "</li>",
+        "</ul>",
         "<br>",
+        "</div>"
     ];
 };
 
 export const ARCHIVE = createArchive();
-
-
-/*
-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\DBP")'>DBP</span><br>`,
-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\GR")'>GR</span><br>`,
-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\MIK")'>MIK</span><br>`,
-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\MM")'>MM</span><br>`,
-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\NIOP")'>NIOP</span><br>`,
-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟶ <span class='content' onclick='clickInputFunction("archive\\\\III. razred\\\\OS")'>OS</span><br>`,
-*/
