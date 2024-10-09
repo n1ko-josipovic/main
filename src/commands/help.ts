@@ -5,10 +5,6 @@ const helpObj = {
       "Tko sam ja?",
     ],
     [
-      "'archive'",
-      "Prikaz arhiva."
-    ],
-    [
       "'help'",
       "Dostupne naredbe i značajke."
     ],
@@ -19,10 +15,10 @@ const helpObj = {
     [
       "'projects'",
       "Popis softverskih projekata."
-    ],
+    ],    
     [
       "'repo'",
-      "Pregled GitHub repozitorija."
+      "Prikaz školskog repozitorija."
     ],
     [
       "'clear'",
@@ -50,7 +46,7 @@ const createHelp = (): string[] => {
   help.push("<br>");
   help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[Tab]</span> za automatsko dovršavanje naredbe.");
   help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[Esc]</span> za brisanje linije unosa.");
-  help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[↑][↓]</span> za pomicanje kroz povijest naredbi.");
+  help.push("&nbsp;Pritisnite <span class='highlighted' style='font-weight: 400 !important;'>[↑]</span><span class='highlighted' style='font-weight: 400 !important;'>[↓]</span> za pomicanje kroz povijest naredbi.");
   help.push("<br>");
   return help
 }

@@ -34,7 +34,7 @@
     "banner": "#F8DDE5",
     "border": {
       "visible": true,
-      "color": "#8ce10b"
+      "color": "#95D2B3"
     },
     "prompt": {
       "default": "#A5A7A7",
@@ -51,5 +51,5 @@
       "textColor": "#95D2B3"
     }
   },
-  "version": "v.3.2.3"
+  "version": "v.3.0.2"
 }

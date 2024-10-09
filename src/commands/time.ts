@@ -10,7 +10,7 @@ const createTime = () => {
         "Zadnji dan": "13. 06.",
     };
 
-    const rezultati = ["<br>"];
+    const rezultati = [];
     let nextPraznik = "";
     let differenceInDays = 0;
 

@@ -13,6 +13,7 @@
   <meta name="google-site-verification" content="a7E0rynRvnonmCk2GWwk90vAS9jh8p8RxsWlu2k0NGs" />
   <script src="https://kit.fontawesome.com/d5effce557.js" crossorigin="anonymous"></script>
   <title>Niko Josipović</title>
+
 </head>
 
 <body>
@@ -20,6 +21,7 @@
     </div>
     <br>
     <div id="terminal">
+
       <div>
         <span id="prompt"><span id="pre-user"></span>@<a href="https://www.tsrb.hr/" class="no-hover"
             style="text-decoration: none;"><span id="pre-host"></span></a>:$ ~
@@ -28,7 +30,9 @@
 
       <!-- command output will be inserted before #write-lines-->
       <a id="write-lines"></a>
+
     </div>
+
     <div id="input-line">
       <div>
         <span id="prompt"><span id="user"></span>@<a href="https://www.tsrb.hr/" class="no-hover"
@@ -39,7 +43,22 @@
       </div>
       <br>
     </div>
+
+    <div id="repo-container">
+      <div class="repo-table-header">
+        <span class="repo-column-icon"><a onclick="closeRepo()" style="cursor: pointer;">Quit</a></span>
+        <span class="repo-column-name">Naziv</span>
+        <span class="repo-column-type">Vrsta</span>
+        <span class="repo-column-date">Izmijenjeno</span>
+        <span class="repo-column-who">Izmijenio</span>
+      </div>
+      <div class="repo-elements"></div>
+      <div id="current-repo-directory">
+        <span id="current-repo-directory-path"></span>
+      </div>
+    </div>
   </main>
+
 </body>
 
 <script type="module" src="./src/styles.ts"></script>

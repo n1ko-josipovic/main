@@ -5,6 +5,10 @@ const helpObj = {
             "Prikaz natpisa."
         ],
         [
+            "'github'",
+            "Pregled GitHub repozitorija."
+        ],
+        [
             "'history'",
             "Prikaz korištenih naredbi."
         ],

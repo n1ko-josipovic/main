@@ -1,22 +1,20 @@
 import command from '../config.json' assert {type: 'json'};
 import { ABOUTME } from "./commands/aboutme";
-import { ARCHIVE } from "./commands/archive";
 import { BANNER } from "./commands/banner";
 import { DEFAULT } from "./commands/default";
 import { HELP } from "./commands/help";
 import { HELP_ } from "./commands/help+";
 import { downloadINFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
+import { REPO } from "./commands/repo";
 import { TIME } from "./commands/time";
 
-import { UIP } from "./content/uip";
-
-import { POR } from "./content/por";
-import { UUBP } from "./content/uubp";
-import { UURM } from "./content/uurm";
-
-import { RM } from "./content/rm";
-import { SJWP } from "./content/sjwp";
+import { UIP } from "./repo/h-school/uip";
+import { POR } from "./repo/h-school/por";
+import { UUBP } from "./repo/h-school/uubp";
+import { UURM } from "./repo/h-school/uurm";
+import { RM } from "./repo/h-school/rm";
+import { SJWP } from "./repo/h-school/sjwp";
 
 let mutWriteLines = document.getElementById("write-lines");
 let historyIdx = 0
@@ -31,7 +29,7 @@ const PRE_USER = document.getElementById("pre-user");
 const HOST = document.getElementById("host");
 const USER = document.getElementById("user");
 const PROMPT = document.getElementById("prompt");
-const COMMANDS = ["aboutme", "archive", "banner", "echo", "help", "history", "info", "password", "projects", "repo", "time", "translate", "weather", "clear"];
+const COMMANDS = ["aboutme", "banner", "echo", "github", "help", "history", "info", "password", "projects", "repo", "time", "translate", "weather", "clear"];
 const HISTORY: string[] = [];
 
 const SHADOW = "text-shadow-style";
@@ -46,25 +44,59 @@ const scrollToBottom = () => {
   MAIN.scrollTop = MAIN.scrollHeight;
 }
 
+let userInputKeyOption = 0;
 function userInputHandler(e: KeyboardEvent) {
   const key = e.key;
 
   switch (key) {
     case "Enter":
-      e.preventDefault();
-      enterKey();
-
-      scrollToBottom();
+      switch (userInputKeyOption) {
+        case 0:
+          e.preventDefault();
+          enterKey();
+          scrollToBottom();
+          break;
+        case 1:
+          e.preventDefault();
+          repoKeys(key);
+          break;
+      }
       break;
     case "Escape":
-      USERINPUT.value = "";
+      switch (userInputKeyOption) {
+        case 0:
+          USERINPUT.value = "";
+          break;
+        case 1:
+          e.preventDefault();
+          closeRepo();
+          break;
+      }
+
       break;
     case "ArrowUp":
-      arrowKeys(key);
-      e.preventDefault();
+      switch (userInputKeyOption) {
+        case 0:
+          arrowKeys(key);
+          e.preventDefault()
+          break;
+        case 1:
+          repoKeys(key);
+          e.preventDefault();
+          break;
+      }
       break;
+
     case "ArrowDown":
-      arrowKeys(key);
+      switch (userInputKeyOption) {
+        case 0:
+          arrowKeys(key);
+          break;
+        case 1:
+          repoKeys(key);
+          e.preventDefault();
+          break;
+      }
       break;
     case "Tab":
       tabKey();
@@ -103,105 +135,41 @@ function enterKey() {
   just insert a prompt before #write-lines
   */
   if (userInput.trim().length !== 0) {
-    if (userInput.trimStart().toLowerCase().startsWith("echo ") && userInput.toLowerCase().trim() !== "echo") {
-      const message = userInput.trimStart().slice(5);
-      writeLines(["<br>", message, "<br>"]);
-      USERINPUT.value = resetInput;
-      userInput = resetInput;
-      return;
-    }
+    const trimmedThanUserInput = userInput.trimStart().toLowerCase();
+    const userInputThanTrimmed = userInput.toLowerCase().trim();
 
-    else if (userInput.trimStart().toLowerCase().startsWith("weather ") && userInput.toLowerCase().trim() !== "weather") {
+    if (trimmedThanUserInput.startsWith("echo ") && userInputThanTrimmed !== "echo") {
+      writeLines([userInput.trimStart().slice(5), "<br>"]);
+    } else if (trimmedThanUserInput.startsWith("weather ") && userInputThanTrimmed !== "weather") {
       const weatherCity = userInput.trimStart().slice(8);
-
-      const getWeather = async (city: string) => {
-        try {
-          const response = await fetch(`https://wttr.in/${city}?ATm`);
-
-          if (!response.ok) {
-            throw new Error();
-          }
-
-          let weatherData = await response.text();
-
-          let weatherLines = weatherData.split('\n');
-
-          if (window.innerWidth < 1800) {
-            weatherLines = weatherLines.slice(0, 7);
-          } else {
-            weatherLines = weatherLines.slice(0, -3);
-            weatherLines[weatherLines.length - 2] += '\n';
-          }
-
-          weatherLines = weatherLines.map(line => `&nbsp;${line}`);
-          weatherData = `<pre>${weatherLines.join('\n')}</pre>`;
-          writeLines(["<br>", weatherData, "<br>"]);
-
-        } catch (error: any) {
-          writeLines(["<br>", `&nbsp;Greška u prikupljanju prognoze za grad: <span class='lowlighted'>${city}</span>`, "<br>"]);
-        }
-      };
-
-      getWeather(weatherCity);
-
-      USERINPUT.value = resetInput;
-      userInput = resetInput;
-      return;
-    }
-
-    else if (userInput.trimStart().toLowerCase().startsWith("translate ") && userInput.toLowerCase().trim() !== "translate") {
+      fetch(`https://wttr.in/${weatherCity}?ATm`)
+        .then(response => response.ok ? response.text() : Promise.reject())
+        .then(weatherData => {
+          const weatherLines = weatherData.split('\n').slice(0, window.innerWidth < 1800 ? 7 : -3);
+          if (weatherLines.length > 0) weatherLines[weatherLines.length - 2] += '\n';
+          writeLines(["<br>", `<pre>${weatherLines.map(line => `&nbsp;${line}`).join('\n')}</pre>`, "<br>"]);
+        })
+        .catch(() => writeLines([`Greška u prikupljanju prognoze za grad: <span class='lowlighted'>${weatherCity}</span>`, "<br>"]));
+    } else if (trimmedThanUserInput.startsWith("translate ") && userInputThanTrimmed !== "translate") {
       const translateText = userInput.trimStart().slice(10);
-
-      const getTranslation = async (TText: string) => {
-        let translationURL = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(TText)}`;
-
-        try {
-          const response = await fetch(translationURL);
-          const json = await response.json();
-
-          if (json && json[0]) {
-            const translationText = json[0].map((item: any[]) => item[0]).join("");
-            const translationData = `<pre style="white-space: pre-wrap;">${translationText}</pre>`;
-
-            writeLines(["<br>", translationData, "<br>"]);
-
-          } else {
-            writeLines(["<br>", `&nbsp;Translation not found.`, "<br>"]);
-          }
-        } catch (error) {
-          writeLines(["<br>", `&nbsp;Error in fetching translation.`, "<br>"]);
-        }
-      };
-
-      getTranslation(translateText);
-
-      USERINPUT.value = resetInput;
-      userInput = resetInput;
-      return;
-    }
-
-    else if (userInput.trimStart().toLowerCase().startsWith("password ") && userInput.toLowerCase().trim() !== "password") {
-      const passwordLenght = Number(userInput.trimStart().slice(9)) % 33;
-      console.log(passwordLenght);
-
+      fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(translateText)}`)
+        .then(response => response.json())
+        .then(json => {
+          const translationText = json[0]?.map((item: any[]) => item[0]).join("") || "Translation not found.";
+          writeLines([`<pre style="white-space: pre-wrap;">${translationText}</pre>`, "<br>"]);
+        })
+        .catch(() => writeLines([`Error in fetching translation.`, "<br>"]));
+    } else if (trimmedThanUserInput.startsWith("password ") && userInputThanTrimmed !== "password") {
+      const passwordLength = Number(userInput.trimStart().slice(9)) % 33;
       const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%&*()_[]{}|;:,.<>?";
-      let password = "";
-
-      for (let i = 0; i < passwordLenght; i++) {
-        const randomIndex = Math.floor(Math.random() * charset.length);
-        password += charset[randomIndex];
-      }
-      console.log(password.length)
-      writeLines(["<br>", `&nbsp;Zaporka: <span class='lowlighted' onclick='copyFunction()' id='copyText' style='cursor: pointer;'>${password}</span>`, "<br>"]);
-
-      USERINPUT.value = resetInput;
-      userInput = resetInput;
-      return;
+      const password = Array.from({ length: passwordLength }, () => charset[Math.floor(Math.random() * charset.length)]).join('');
+      writeLines([`Zaporka: <span class='lowlighted' onclick='copyFunction()' id='copyText' style='cursor: pointer;'>${password}</span>`, "<br>"]);
+    } else {
+      commandHandler(userInputThanTrimmed);
     }
 
-    else {
-      commandHandler(userInput.toLowerCase().trim());
-    }
+    USERINPUT.value = resetInput;
+    userInput = resetInput;
   }
 
   USERINPUT.value = resetInput;
@@ -246,29 +214,37 @@ function commandHandler(input: string) {
       writeLines(ABOUTME);
       break;
 
-    case 'archive':
-      writeLines(ARCHIVE);
+    case 'repo':
+      if (window.innerWidth > 1600) {
+        writeLines(["Otvaranje repozitorija...", "<br>"]);
+        setTimeout(() => {
+          const fileContainer = document.getElementById('repo-container');
+          if (fileContainer) {
+            fileContainer.classList.add('show');
+            userInputKeyOption = 1;
+          }
+        }, 500);
+      } else {
+        writeLines(REPO);
+      }
+
       break;
-
-
-    case 'archive\\i. razred\\uip':
+    case '/repozitorij/srednja-škola/1. razred/uip.sh':
       writeLines(UIP);
       break;
-
-    case 'archive\\ii. razred\\por':
+    case '/repozitorij/srednja-škola/2. razred/por.sh':
       writeLines(POR);
       break;
-    case 'archive\\ii. razred\\uubp':
+    case '/repozitorij/srednja-škola/2. razred/uubp.sh':
       writeLines(UUBP);
       break;
-    case 'archive\\ii. razred\\uurm':
+    case '/repozitorij/srednja-škola/2. razred/uurm.sh':
       writeLines(UURM);
       break;
-
-    case 'archive\\iii. razred\\rm':
+    case '/repozitorij/srednja-škola/3. razred/rm.sh':
       writeLines(RM);
       break;
-    case 'archive\\iii. razred\\sjwp':
+    case '/repozitorij/srednja-škola/3. razred/sjwp.sh':
       writeLines(SJWP);
       break;
 
@@ -287,15 +263,13 @@ function commandHandler(input: string) {
       break;
 
     case 'echo':
-      writeLines(["<br>", "&nbsp;Korištenje: echo [poruka]. Primjer: echo Pozdrav!", "<br>"]);
+      writeLines(["Korištenje: echo [poruka]. Primjer: echo Pozdrav!", "<br>"]);
       break;
 
-    case '?':
     case 'help':
       writeLines(HELP);
       break;
-      
-    case '???':
+
     case 'help+':
       writeLines(HELP_);
       break;
@@ -334,14 +308,14 @@ function commandHandler(input: string) {
       break;
 
     case 'password':
-      writeLines(["<br>", "&nbsp;Korištenje: password [duljina]. Primjer: password 10", "<br>"]);
+      writeLines(["Korištenje: password [duljina]. Primjer: password 10", "<br>"]);
       break;
 
     case 'projects':
       writeLines(PROJECTS);
       break;
 
-    case 'repo':
+    case 'github':
       writeLines(["Preusmjeravanje na github.com...", "<br>"]);
       setTimeout(() => {
         window.open(REPO_LINK, '_blank');
@@ -353,11 +327,11 @@ function commandHandler(input: string) {
       break;
 
     case 'translate':
-      writeLines(["<br>", "&nbsp;Usage: translate [tekst]. Example: translate Pozdrav!", "<br>"]);
+      writeLines(["Usage: translate [tekst]. Example: translate Pozdrav!", "<br>"]);
       break;
 
     case 'weather':
-      writeLines(["<br>", "&nbsp;Korištenje: weather [grad]. Primjer: weather Zagreb", "<br>"]);
+      writeLines(["Korištenje: weather [grad]. Primjer: weather Zagreb", "<br>"]);
       break;
 
     default:
@@ -422,8 +396,195 @@ const initEventListeners = () => {
 
   window.addEventListener('click', () => {
     USERINPUT.focus();
+    scrollToBottom();
   });
 
 }
 
 initEventListeners();
+
+
+
+// Repozitorij
+const today = new Date().toISOString().split('T')[0];
+const fileSystem: { [key: string]: any } = {
+  "": {
+    "repozitorij": {
+      "type": "folder",
+      "typeName": "SUB-DIR",
+      "lastModified": "2024-10-7",
+      "srednja-škola": {
+        "type": "folder",
+        "typeName": "SUB-DIR",
+        "lastModified": "2024-10-7",
+        "1. razred": {
+          "type": "folder",
+          "typeName": "SUB-DIR",
+          "lastModified": "2024-10-7",
+          "UIP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today }
+        },
+        "2. razred": {
+          "type": "folder",
+          "typeName": "SUB-DIR",
+          "lastModified": "2024-10-7",
+          "UUBP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today, },
+          "UURM.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today }
+        },
+        "3. razred": {
+          "type": "folder",
+          "typeName": "SUB-DIR",
+          "lastModified": "2024-10-7",
+          "RM.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today },
+          "SJWP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today }
+        }
+      },
+    }
+  }
+};
+
+let currentDirectory: any = fileSystem[""];
+let directoryStack: string[] = [""];
+let currentIndex: number = 0;
+let activeFile: string = '';
+
+function repoKeys(e: string): void {
+  const items: NodeListOf<Element> = document.querySelectorAll('.file, .directory');
+  switch (e) {
+    case "ArrowDown":
+      if (currentIndex < items.length - 1) {
+        currentIndex++;
+        repoHighlightItem(currentIndex);
+      }
+      break;
+    case "ArrowUp":
+      if (currentIndex > 0) {
+        currentIndex--;
+        repoHighlightItem(currentIndex);
+      }
+      break;
+    case "Enter":
+      (items[currentIndex] as HTMLElement).click();
+      break;
+  }
+}
+
+let isFileClicked = false;
+function renderDirectory(directory: any): void {
+  const container: HTMLElement | null = document.querySelector('.repo-elements');
+
+  if (container) {
+    container.innerHTML = '';
+
+    if (directoryStack.length > 1) {
+      const backOption: HTMLElement = document.createElement('div');
+      backOption.className = 'directory';
+      backOption.innerHTML = `
+        <span class="repo-column-icon"><i class="icon fa-regular fa-folder-open"></i></span>
+        <span class="repo-column-name">..</span>
+        <span class="repo-column-type">UP-DIR</span>
+        <span class="repo-column-date">2024-10-7</span>
+        <span class="repo-column-who">root</span>
+      `;
+      backOption.onclick = goBackRepoFolder;
+      container.appendChild(backOption);
+    }
+
+    for (let item in directory) {
+      if (item !== 'type' && item !== 'typeName' && item !== 'lastModified') {
+        const entry: HTMLElement = document.createElement('div');
+
+        const isFolder: boolean = directory[item].type === 'folder';
+        entry.className = isFolder ? 'directory' : 'file';
+
+        const typeName: string = directory[item].typeName;
+        const lastModified: string = directory[item].lastModified || 'Nepoznato';
+        if (isFolder) {
+          entry.innerHTML = `
+          <span class="repo-column-icon"> <i class="icon fa-regular fa-folder"></i></span>
+          <span class="repo-column-name">${item}</span>
+          <span class="repo-column-type">${typeName}</span>
+          <span class="repo-column-date">${lastModified}</span>
+          <span class="repo-column-who">root</span>`;
+        }
+        else {
+          entry.innerHTML = `
+          <span class="repo-column-icon"><i class="icon fa-brands fa-linux"></i></span>
+          <span class="repo-column-name">${item}</span>
+          <span class="repo-column-type">${typeName}</span>
+          <span class="repo-column-date">${lastModified}</span>
+          <span class="repo-column-who">strippy</span>`;
+        }
+
+        if (isFolder) {
+          entry.onclick = () => openRepoFolder(item);
+        } else {
+          entry.onclick = () => {
+            if (!isFileClicked) {
+              isFileClicked = true;
+              setTimeout(() => {
+                const fullPath = directoryStack.length > 0 ? directoryStack.join('/') + `/${item}` : '';
+                USERINPUT.value = fullPath;
+                enterKey();
+                scrollToBottom();
+
+                isFileClicked = false;
+              }, 300);
+            }
+          };
+        }
+        container.appendChild(entry);
+      }
+    }
+
+    currentIndex = 0;
+    repoHighlightItem(currentIndex);
+  }
+}
+
+function openRepoFolder(folderName: string): void {
+  currentDirectory = currentDirectory[folderName];
+  directoryStack.push(folderName);
+  renderDirectory(currentDirectory);
+  updateCurrentRepoDirectoryPath();
+}
+
+function goBackRepoFolder(): void {
+  directoryStack.pop();
+  currentDirectory = fileSystem;
+  directoryStack.forEach(dir => {
+    currentDirectory = currentDirectory[dir];
+  });
+  renderDirectory(currentDirectory);
+  updateCurrentRepoDirectoryPath();
+}
+
+function repoHighlightItem(index: number): void {
+  const items: NodeListOf<Element> = document.querySelectorAll('.file, .directory');
+  items.forEach(item => item.classList.remove('repo-active'));
+  items[index].classList.add('repo-active');
+  activeFile = (items[index].querySelector('.repo-column-name') as HTMLElement)?.textContent || '';
+  updateCurrentRepoDirectoryPath();
+}
+
+function updateCurrentRepoDirectoryPath(): void {
+  const pathElement: HTMLElement | null = document.getElementById('current-repo-directory-path');
+  if (pathElement) {
+    const path = directoryStack.length > 0
+      ? directoryStack.join('/') + '/'
+      : '';
+    pathElement.textContent = `${path}${activeFile}`;
+  }
+}
+
+function closeRepo(): any {
+  const fileContainer = document.getElementById('repo-container');
+  if (fileContainer) {
+    fileContainer.classList.remove('show');
+  }
+  userInputKeyOption = 0;
+  return;
+}
+(window as any).closeRepo = closeRepo;
+
+renderDirectory(currentDirectory);
+updateCurrentRepoDirectoryPath();
