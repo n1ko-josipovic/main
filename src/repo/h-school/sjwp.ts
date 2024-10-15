@@ -14,7 +14,7 @@ const createSjwp = (): string[] => {
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/SJWP/LV02.pdf" target="_blank">LV02 - Skriptni jezici na Internetu</a>`,
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/SJWP/LV03.pdf" target="_blank">LV03 - Sustavi boja na zaslonu i pisaču</a>`,
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/SJWP/LV04.pdf" target="_blank">LV04 - Definiranje i proces razvoja mrežnog sjedišta</a>`,
-        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/SJWP/LV05.docx" target="_blank">LV05 - Sintaksa i osnovni elementi HTML-a</a>`,
+        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/SJWP/LV05.pdf" target="_blank">LV05 - Sintaksa i osnovni elementi HTML-a</a>`,
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Ostalo:</span>`,
         "<br>",
