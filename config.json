@@ -18,9 +18,9 @@
   "aboutGreeting": "Pozdrav!",
   "projects": [
     [
-      "Graphing Calculator",
-      "WEB grafički kalkulator",
-      "https://github.com/n1ko-josipovic/graph-calc"
+      "Morse Translator",
+      "WEB Morseov koder/dekoder.",
+      "https://github.com/n1ko-josipovic/morse-translator"
     ],
     [
       "Terminal e-Dnevnik",
