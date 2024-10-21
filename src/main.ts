@@ -227,23 +227,29 @@ function commandHandler(input: string) {
       } else {
         writeLines(REPO);
       }
-
       break;
+
+    case '/1. razred/uip.sh':
     case '/repozitorij/srednja-škola/1. razred/uip.sh':
       writeLines(UIP);
       break;
+    case '/2. razred/por.sh':
     case '/repozitorij/srednja-škola/2. razred/por.sh':
       writeLines(POR);
       break;
+    case '/2. razred/uubp.sh':
     case '/repozitorij/srednja-škola/2. razred/uubp.sh':
       writeLines(UUBP);
       break;
+    case '/2. razred/uurm.sh':
     case '/repozitorij/srednja-škola/2. razred/uurm.sh':
       writeLines(UURM);
       break;
+    case '/3. razred/rm.sh':
     case '/repozitorij/srednja-škola/3. razred/rm.sh':
       writeLines(RM);
       break;
+    case '/3. razred/sjwp.sh':
     case '/repozitorij/srednja-škola/3. razred/sjwp.sh':
       writeLines(SJWP);
       break;
@@ -421,14 +427,14 @@ const fileSystem: { [key: string]: any } = {
           "type": "folder",
           "typeName": "SUB-DIR",
           "lastModified": "2024-10-7",
-          "UIP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today }
+          "UIP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": "2024-10-7" }
         },
         "2. razred": {
           "type": "folder",
           "typeName": "SUB-DIR",
           "lastModified": "2024-10-7",
-          "UUBP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today, },
-          "UURM.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today }
+          "UUBP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": "2024-10-7", },
+          "UURM.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": "2024-10-7" }
         },
         "3. razred": {
           "type": "folder",
