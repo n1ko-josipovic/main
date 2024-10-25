@@ -594,3 +594,39 @@ function closeRepo(): any {
 
 renderDirectory(currentDirectory);
 updateCurrentRepoDirectoryPath();
+
+//Repozitorij - mobile
+/*
+function addTreeList() {
+  if (!mutWriteLines) return;
+
+  const section = document.createElement('section');
+  section.className = 'list-tree';
+  section.innerHTML = `
+    <br>
+    <ul>
+      <li>srednja-škola
+        <ul>
+          <li>1. razred
+            <ul>
+                <li onclick='clickInputFunction("/1. razred/UIT.sh")'>UIT.sh</li>
+            </ul>
+          </li>
+          <li>2. razred
+            <ul>
+                <li onclick='clickInputFunction("/2. razred/UUBP.sh")'>UUBP.sh</li>
+                <li onclick='clickInputFunction("/2. razred/UURM.sh")'>UURM.sh</li>
+            </ul>
+          </li>
+          <li>3. razred
+            <ul>
+                <li onclick='clickInputFunction("/3. razred/RM.sh")'>RM.sh</li>
+                <li onclick='clickInputFunction("/3. razred/SJWP.sh")'>SJWP.sh</li>
+            </ul>
+          </li>
+      </li>
+    </ul>`;
+
+  mutWriteLines.parentNode!.insertBefore(section, mutWriteLines);
+}
+*/
