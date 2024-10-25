@@ -16,9 +16,9 @@
 
         <p
             style="max-width: 900px; line-height: 1.8; margin: 0 auto 50px auto; color: #4a5568; text-align: justify; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            Kao glavni i najveći (po broj stanovnika) grad Republike Hrvatske, Zagreb je kulturno, znanstveno,
-            gospodarsko i upravno središte Republike Hrvatske, stoga ne čudi što u njemu možemo pronaći puno
-            značajnih lokaliteta. U nastavku će biti navedenih nekoliko koje možete posjetiti.
+            Kao glavni i najveći (po broj stanovnika) grad Republike Hrvatske, Zagreb je njeno kulturno, znanstveno,
+            gospodarsko i upravno središte, stoga ne čudi što u njemu možemo pronaći puno
+            značajnih lokaliteta. U nastavku su navedeni neki koje možete posjetiti.
         </p>
 
         <div

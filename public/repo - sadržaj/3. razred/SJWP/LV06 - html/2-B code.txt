@@ -11,7 +11,7 @@
             background: #cee2ff;
             color: #2d3436;
             margin: 0;
-            padding: 30px 0;
+            padding: 25px 0;
         }
 
         h1 {
@@ -81,6 +81,10 @@
         }
 
         @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
             .grid-container {
                 grid-template-columns: 1fr;
             }
@@ -95,39 +99,39 @@
         </h1>
 
         <p>
-            Kao glavni i najveći (po broj stanovnika) grad Republike Hrvatske, Zagreb je kulturno, znanstveno,
-            gospodarsko i upravno središte Republike Hrvatske, stoga ne čudi što u njemu možemo pronaći puno
-            značajnih lokaliteta. U nastavku će biti navedenih nekoliko koje možete posjetiti.
+            Kao glavni i najveći (po broj stanovnika) grad Republike Hrvatske, Zagreb je njeno kulturno, znanstveno,
+            gospodarsko i upravno središte, stoga ne čudi što u njemu možemo pronaći puno
+            značajnih lokaliteta. U nastavku su navedeni neki koje možete posjetiti.
         </p>
         <div class="grid-container">
             <a href="https://hr.wikipedia.org/wiki/Trg_Republike_Hrvatske_(Zagreb)" target="_blank"
                 class="location-card">
-                <img src="res/trh.jpg" alt="Trg Republike Hrvatske" class="location-image">
+                <img src="images/trh.jpg" alt="Trg Republike Hrvatske" class="location-image">
                 <h3 class="location-title">Trg Republike Hrvatske</h3>
             </a>
 
             <a href="https://mimara.hr/Info" target="_blank" class="location-card">
-                <img src="res/muzej_mimara.jpg" alt="Muzej Mimara" class="location-image">
+                <img src="images/muzej_mimara.jpg" alt="Muzej Mimara" class="location-image">
                 <h3 class="location-title">Muzej Mimara</h3>
             </a>
 
             <a href="https://katedrala.hr/" target="_blank" class="location-card">
-                <img src="res/katedrala.jpg" alt="Zagrebačka katedrala" class="location-image">
+                <img src="images/katedrala.jpg" alt="Zagrebačka katedrala" class="location-image">
                 <h3 class="location-title">Zagrebačka katedrala</h3>
             </a>
 
             <a href="https://park-maksimir.hr/" target="_blank" class="location-card">
-                <img src="res/park_maksimir.jpg" alt="Park Maksimir" class="location-image">
+                <img src="images/park_maksimir.jpg" alt="Park Maksimir" class="location-image">
                 <h3 class="location-title">Park Maksimir</h3>
             </a>
 
             <a href="https://gnkdinamo.hr/hr/Club/Stadium" target="_blank" class="location-card">
-                <img src="res/stadion_maksimir.jpg" alt="Stadion Maksimir" class="location-image">
+                <img src="images/stadion_maksimir.jpg" alt="Stadion Maksimir" class="location-image">
                 <h3 class="location-title">Stadion Maksimir</h3>
             </a>
 
             <a href="https://www.info.hazu.hr/" target="_blank" class="location-card">
-                <img src="res/hazu.jpg" alt="HAZU" class="location-image">
+                <img src="images/hazu.jpg" alt="HAZU" class="location-image">
                 <h3 class="location-title">HAZU</h3>
             </a>
         </div>
