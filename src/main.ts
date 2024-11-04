@@ -138,35 +138,11 @@ function enterKey() {
     const trimmedThanUserInput = userInput.trimStart().toLowerCase();
     const userInputThanTrimmed = userInput.toLowerCase().trim();
 
-    if (trimmedThanUserInput.startsWith("echo ") && userInputThanTrimmed !== "echo") {
-      writeLines([userInput.trimStart().slice(5), "<br>"]);
-    } else if (trimmedThanUserInput.startsWith("weather ") && userInputThanTrimmed !== "weather") {
-      const weatherCity = userInput.trimStart().slice(8);
-      fetch(`https://wttr.in/${weatherCity}?ATm`)
-        .then(response => response.ok ? response.text() : Promise.reject())
-        .then(weatherData => {
-          const weatherLines = weatherData.split('\n').slice(0, window.innerWidth < 1800 ? 7 : -3);
-          if (weatherLines.length > 0) weatherLines[weatherLines.length - 2] += '\n';
-          writeLines(["<br>", `<pre>${weatherLines.map(line => `&nbsp;${line}`).join('\n')}</pre>`, "<br>"]);
-        })
-        .catch(() => writeLines([`Greška u prikupljanju prognoze za grad: <span class='lowlighted'>${weatherCity}</span>`, "<br>"]));
-    } else if (trimmedThanUserInput.startsWith("translate ") && userInputThanTrimmed !== "translate") {
-      const translateText = userInput.trimStart().slice(10);
-      fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(translateText)}`)
-        .then(response => response.json())
-        .then(json => {
-          const translationText = json[0]?.map((item: any[]) => item[0]).join("") || "Translation not found.";
-          writeLines([`<pre style="white-space: pre-wrap;">${translationText}</pre>`, "<br>"]);
-        })
-        .catch(() => writeLines([`Error in fetching translation.`, "<br>"]));
-    } else if (trimmedThanUserInput.startsWith("password ") && userInputThanTrimmed !== "password") {
-      const passwordLength = Number(userInput.trimStart().slice(9)) % 33;
-      const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%&*()_[]{}|;:,.<>?";
-      const password = Array.from({ length: passwordLength }, () => charset[Math.floor(Math.random() * charset.length)]).join('');
-      writeLines([`Zaporka: <span class='lowlighted' onclick='copyFunction()' id='copyText' style='cursor: pointer;'>${password}</span>`, "<br>"]);
-    } else {
-      commandHandler(userInputThanTrimmed);
-    }
+    if (trimmedThanUserInput.startsWith("echo ") && userInputThanTrimmed !== "echo") { writeLines([userInput.trimStart().slice(5), "<br>"]); }
+    else if (trimmedThanUserInput.startsWith("weather ") && userInputThanTrimmed !== "weather") { const weatherCity = userInput.trimStart().slice(8); fetch(`https://wttr.in/${weatherCity}?ATm`).then(response => response.ok ? response.text() : Promise.reject()).then(weatherData => { const weatherLines = weatherData.split('\n').slice(0, window.innerWidth < 1800 ? 7 : -3); if (weatherLines.length > 0) weatherLines[weatherLines.length - 2] += '\n'; writeLines(["<br>", `<pre>${weatherLines.map(line => `&nbsp;${line}`).join('\n')}</pre>`, "<br>"]); }).catch(() => writeLines([`Greška u prikupljanju prognoze za grad: <span class='lowlighted'>${weatherCity}</span>`, "<br>"])); }
+    else if (trimmedThanUserInput.startsWith("translate ") && userInputThanTrimmed !== "translate") { const translateText = userInput.trimStart().slice(10); fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(translateText)}`).then(response => { if (!response.ok) { throw new Error('Network response was not ok'); } return response.json(); }).then(json => { const translationText = json[0]?.map((item: any[]) => item[0]).join("") || "Translation not found."; console.log('Translation:', translationText); alert(translationText); }).catch((error) => { const errorMessage = `Translation error: ${error.message}`; console.error(errorMessage); alert(errorMessage); }); }
+    else if (trimmedThanUserInput.startsWith("password ") && userInputThanTrimmed !== "password") { const passwordLength = Number(userInput.trimStart().slice(9)) % 33; const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%&*()_[]{}|;:,.<>?"; const password = Array.from({ length: passwordLength }, () => charset[Math.floor(Math.random() * charset.length)]).join(''); writeLines([`Zaporka: <span class='lowlighted' onclick='copyFunction()' id='copyText' style='cursor: pointer;'>${password}</span>`, "<br>"]); }
+    else { commandHandler(userInputThanTrimmed); }
 
     USERINPUT.value = resetInput;
     userInput = resetInput;
