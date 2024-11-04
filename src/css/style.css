@@ -66,6 +66,7 @@ p {
   line-height: 22px;
   animation: typing 0.75s steps(30, end);
   white-space: nowrap;
+  overflow: hidden;
 }
 
 div {
