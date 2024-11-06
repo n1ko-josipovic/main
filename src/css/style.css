@@ -131,8 +131,7 @@ a.no-hover:hover {
   color: #95D2B3;
   text-shadow:
     0 0 2px blue,
-    0 0 0px #95D2B3,
-    0 0 10px #fff;
+    0 0 7px #fff;
 }
 
 .text-shadow-style {
