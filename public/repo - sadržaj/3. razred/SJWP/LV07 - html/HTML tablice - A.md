@@ -1,0 +1,172 @@
+# HTML tablice - A
+
+---
+
+#### [HTML tablice - A.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20A.html)
+
+---
+
+
+```html
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px dotted black;
+            text-align: center;
+        }
+    </style>
+    <title>Raspored Sati</title>
+</head>
+
+<body>
+    <table style="margin-bottom: 50px;">
+        <tr>
+            <th>Vrijeme</th>
+            <th>Ponedjeljak</th>
+            <th>Utorak</th>
+            <th>Srijeda</th>
+            <th>Četvrtak</th>
+            <th>Petak</th>
+        </tr>
+        <tr>
+            <td>7:30 - 8:15</td>
+            <td></td>
+            <td>Gr</td>
+            <td>Hrv</td>
+            <td></td>
+            <td>Hrv</td>
+        </tr>
+        <tr>
+            <td>8:20 - 9:05</td>
+            <td></td>
+            <td>Gr</td>
+            <td>V</td>
+            <td>Hrv</td>
+            <td>Mat</td>
+        </tr>
+        <tr>
+            <td>9:10 - 9:55</td>
+            <td>Mm</td>
+            <td>Rm</td>
+            <td>Mik</td>
+            <td>VIM</td>
+            <td>Sjiwp</td>
+        </tr>
+        <tr>
+            <td>10:15 - 11:00</td>
+            <td>Mm</td>
+            <td>Rm</td>
+            <td>Tzk</td>
+            <td>Mik</td>
+            <td>Sjiwp</td>
+        </tr>
+        <tr>
+            <td>11:05 - 11:50</td>
+            <td>Mat</td>
+            <td>Dbp</td>
+            <td>Tzk</td>
+            <td>Eng</td>
+            <td>Os</td>
+        </tr>
+        <tr>
+            <td>11:55 - 12:40</td>
+            <td>Dbp</td>
+            <td>Os</td>
+            <td>Fiz</td>
+            <td>Mat</td>
+            <td>Eng</td>
+        </tr>
+        <tr>
+            <td>12:45 - 13:30</td>
+            <td>Eng</td>
+            <td>Fiz</td>
+            <td>Sr</td>
+            <td>Niop</td>
+            <td>Gr</td>
+        </tr>
+        <tr>
+            <td>13:35 - 14:20</td>
+            <td></td>
+            <td>Fiz</td>
+            <td></td>
+            <td>Niop</td>
+            <td>Gr</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Vrijeme</th>
+            <th>Ponedjeljak</th>
+            <th>Utorak</th>
+            <th>Srijeda</th>
+            <th>Četvrtak</th>
+            <th>Petak</th>
+        </tr>
+        <tr>
+            <td>7:30 - 8:15</td>
+            <td rowspan="2"></td>
+            <td rowspan="2">Gr</td>
+            <td>Hrv</td>
+            <td></td>
+            <td>Hrv</td>
+        </tr>
+        <tr>
+            <td>8:20 - 9:05</td>
+            <td>V</td>
+            <td>Hrv</td>
+            <td>Mat</td>
+        </tr>
+        <tr>
+            <td>9:10 - 9:55</td>
+            <td rowspan="2">Mm</td>
+            <td rowspan="2">Rm</td>
+            <td>Mik</td>
+            <td>VIM</td>
+            <td rowspan="2">Sjiwp</td>
+        </tr>
+        <tr>
+            <td>10:15 - 11:00</td>
+            <td rowspan="2">Tzk</td>
+            <td>Mik</td>
+        </tr>
+        <tr>
+            <td>11:05 - 11:50</td>
+            <td>Mat</td>
+            <td>Dbp</td>
+            <td>Eng</td>
+            <td>Os</td>
+        </tr>
+        <tr>
+            <td>11:55 - 12:40</td>
+            <td>Dbp</td>
+            <td>Os</td>
+            <td>Fiz</td>
+            <td>Mat</td>
+            <td>Eng</td>
+        </tr>
+        <tr>
+            <td>12:45 - 13:30</td>
+            <td>Eng</td>
+            <td rowspan="2">Fiz</td>
+            <td>Sr</td>
+            <td rowspan="2">Niop</td>
+            <td>Gr</td>
+        </tr>
+        <tr>
+            <td>13:35 - 14:20</td>
+            <td></td>
+            <td></td>
+            <td>Gr</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
