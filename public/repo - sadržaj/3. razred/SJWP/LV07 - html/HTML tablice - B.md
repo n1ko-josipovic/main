@@ -1,7 +1,7 @@
 # HTML tablice - B
 ---
 
-#### [HTML tablice - A.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20B.html)
+#### [HTML tablice - B.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20B.html)
 
 ---
 
