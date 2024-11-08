@@ -166,7 +166,6 @@
             <div class="form-group">
                 <label for="email" class="required">E-mail adresa</label>
                 <input type="email" id="email" name="email" required placeholder="ime.prezime@example.com">
-                <p class="help-text">Na ovu adresu ćemo vam poslati podatke za potvrdu računa</p>
             </div>
 
             <div class="form-group">
