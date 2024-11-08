@@ -14,74 +14,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiramisu od Limuna</title>
+    <title>Obrasci</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --error-color: #ef4444;
+            --success-color: #10b981;
+            --text-color: #1f2937;
+            --border-radius: 8px;
+        }
+
+        * {
+            font-family: system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: #f3f4f6;
+        }
+
+        .form-container {
+            max-width: 480px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+            background-color: #f9fafb;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        input[type="submit"],
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #4338ca;
+        }
+
+        .required:after {
+            content: "*";
+            color: var(--error-color);
+            margin-left: 0.25rem;
+        }
+
+        .help-text {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        @media (max-width: 640px) {
+            .form-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Tiramisu od Limuna</h1>
-    <img src="https://podravkaiovariations.azureedge.net/c36c85ac-4f35-11ef-b594-3618500f0d85/v/f2b1f6a6-64bc-11eb-b6c2-0242ac130010/1600x1200-f2b21938-64bc-11eb-9498-0242ac130010.webp"
-        alt="Tiramisu od limuna" style="width: 300px; height: auto;">
+    <section class="form-container">
+        <h2 class="form-title">Registracija</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="ime" class="required">Ime</label>
+                <input type="text" id="ime" name="ime" required placeholder="Unesite vaše ime">
+            </div>
 
-    <section>
-        <h2>Namirnice</h2>
-        <ul>
-            <li>1 Dolcela Tiramisu</li>
-            <li>1 Dolcela Limun šećer</li>
-            <li>40 g šećera</li>
-            <li>180 ml vode</li>
-            <li>Sok jednog limuna</li>
-        </ul>
+            <div class="form-group">
+                <label for="prezime" class="required">Prezime</label>
+                <input type="text" id="prezime" name="prezime" required placeholder="Unesite vaše prezime">
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="required">E-mail adresa</label>
+                <input type="email" id="email" name="email" required placeholder="ime.prezime@example.com">
+                <p class="help-text">Na ovu adresu ćemo vam poslati podatke za potvrdu računa</p>
+            </div>
+
+            <div class="form-group">
+                <label>Sportovi kojima se bavite</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="sport" value="hokej">
+                        Hokej
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sport" value="nogomet">
+                        Nogomet
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sport" value="odbojka">
+                        Odbojka
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Spol</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="spol" value="m" required>
+                        Muško
+                    </label>
+                    <label>
+                        <input type="radio" name="spol" value="z">
+                        Žensko
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="required">Lozinka</label>
+                <input type="password" id="password" name="password" required placeholder="Minimalno 8 znakova">
+                <p class="help-text">Lozinka mora sadržavati najmanje 8 znakova, jedno veliko slovo i jedan broj</p>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" required>
+                    Prihvaćam <a href="#">uvjete korištenja</a> i <a href="#">pravila privatnosti</a>
+                </label>
+            </div>
+
+            <button type="submit">Registriraj se</button>
+        </form>
     </section>
 
-    <section>
-        <h2>Za kremu od limuna (lemon curd):</h2>
-        <ul>
-            <li>3 cijela jaja</li>
-            <li>2 žumanjka</li>
-            <li>170 g šećera</li>
-            <li>1 Dolcela Limun šećer</li>
-            <li>90 g maslaca</li>
-            <li>130 g soka od limuna</li>
-        </ul>
+    <section class="form-container">
+        <h2 class="form-title">Prijava</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="login-email" class="required">E-mail adresa</label>
+                <input type="email" id="login-email" name="login-email" required placeholder="ime.prezime@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="login-password" class="required">Lozinka</label>
+                <input type="password" id="login-password" name="login-password" required
+                    placeholder="Unesite vašu lozinku">
+                <p class="help-text"><a href="#">Zaboravili ste lozinku?</a></p>
+            </div>
+
+            <button type="submit">Prijavi se</button>
+        </form>
     </section>
 
-    <section>
-        <h2>Za sirup za piškote:</h2>
-        <ul>
-            <li>Korica jednog limuna</li>
-            <li>40 g šećera</li>
-            <li>180 ml vode</li>
-            <li>Sok jednog limuna</li>
-        </ul>
-    </section>
+    <section class="form-container">
+        <h2 class="form-title">Kontaktirajte nas</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="contact-name" class="required">Ime i prezime</label>
+                <input type="text" id="contact-name" name="contact-name" required
+                    placeholder="Unesite vaše ime i prezime">
+            </div>
 
-    <section>
-        <h2>Priprema</h2>
-        <ol>
-            <li>Za kremu od limuna, pomiješajte jaja, žumanjke, šećer i limun šećer u lončiću na laganoj vatri. Dodajte
-                sok od limuna i kuhajte dok se smjesa ne zgusne.</li>
-            <li>Maknite s vatre, procijedite, dodajte maslac i pokrijte plastičnom folijom. Ostavite da se ohladi.</li>
-            <li>Za sirup, ogulite limun i kuhajte koricu s vodom, šećerom i sokom. Maknite koricu i ohladite.</li>
-            <li>Pripremite tiramisu kremu tako što ćete pomiješati hladno mlijeko s Dolcela tiramisu smjesom i umiješati
-                polovicu kreme od limuna.</li>
-            <li>Umakanjem piškota u sirup, složite prvi sloj u posudi, nanesite tiramisu kremu, i ponovite s preostalim
-                piškotama i kremom.</li>
-            <li>Na kraju, preostali lemon curd rasporedite po vrhu i tiramisu stavite u hladnjak na 4 sata ili preko
-                noći.</li>
-        </ol>
-    </section>
+            <div class="form-group">
+                <label for="contact-email" class="required">E-mail adresa</label>
+                <input type="email" id="contact-email" name="contact-email" required
+                    placeholder="ime.prezime@example.com">
+            </div>
 
-    <section>
-        <h2>Poveznice na slične recepte</h2>
-        <ul>
-            <li><a href="https://www.coolinarika.com/recept/tiramisu-od-limuna-436e747e-4f34-11ef-9d9e-f2442f638796?pretrazivanje=%7B%22tezina-pripreme%22%3A%5B%22Jednostavno%22%5D%7D"
-                    target="_blank">Coolinarika - Tiramisu od limuna</a></li>
-            <li><a href="https://www.leukerecepten.nl/recepten/citroen-tiramisu-met-limoncello/" target="_blank">Leuke
-                    Recepten - Citroen Tiramisu s Limoncellom</a></li>
-            <li><a href="https://www.pinterest.com/pin/lemon-tiramisu--67905906878275647/" target="_blank">Pinterest -
-                    Lemon Tiramisu</a></li>
-        </ul>
+            <div class="form-group">
+                <label for="subject" class="required">Predmet</label>
+                <input type="text" id="subject" name="subject" required placeholder="Ukratko opišite razlog kontakta">
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="required">Poruka</label>
+                <textarea id="message" name="message" required placeholder="Detaljno opišite vaš upit"></textarea>
+            </div>
+
+            <button type="submit">Pošalji poruku</button>
+        </form>
     </section>
 </body>
+
 </html>
 ```
