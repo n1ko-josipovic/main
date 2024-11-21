@@ -18,7 +18,7 @@
     <meta name="description" content="Popis stvari koje bih stavio na popis Svetom Nikoli">
     <meta name="author" content="Niko Josipović">
     <title>Popis stvari za Svetog Nikolu</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="HTML putanje datoteka - A.css">
 </head>
 
 <body>
