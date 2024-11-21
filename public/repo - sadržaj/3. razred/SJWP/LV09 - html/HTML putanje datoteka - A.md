@@ -53,5 +53,55 @@
 ```
 
 ```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
 
+header {
+    color: black;
+    text-align: center;
+    padding: 15px;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+h2 {
+    color: black;
+}
+
+.item {
+    flex-direction: row;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.item-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+
+    border-radius: 8px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #0077cc;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+}
+
+a:hover {
+    color: #0268b1;
+}
 ```
