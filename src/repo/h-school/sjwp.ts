@@ -31,6 +31,7 @@ const createSjwp = (): string[] => {
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Ostalo:</span>`,
         "<br>",
+        `&nbsp;&nbsp;<a href="repo - sadržaj/3. razred/SJWP/zimski-praznici/zimski-praznici.md" target="_blank">Zimski praznici</a>`,
         `&nbsp;&nbsp;<a href="repo - sadržaj/3. razred/SJWP/SJWP predložak.docx" target="_blank">SJWP predložak</a>`,
         "<br>"
     ]
