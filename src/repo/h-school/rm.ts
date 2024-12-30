@@ -16,6 +16,7 @@ const createRm = (): string[] => {
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/RM/LV04.pdf" target="_blank">LV04 - Prikaz rač. mreže s usmjernikom i preklopnicima</a>`,
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/RM/LV05.pdf" target="_blank">LV05 - IPv6 adresiranje</a>`,
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/RM/LV06.pdf" target="_blank">LV06 - Konzolni pristup i temeljna konfiguracija usmjernika</a>`,
+        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repo - sadržaj/3. razred/RM/LV07.docx" target="_blank">LV07 - Statičko usmjeravanje</a>`,
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
         "<br>",
