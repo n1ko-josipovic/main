@@ -3,6 +3,7 @@ const createRm = (): string[] => {
     const HIGHLIGHTED = "highlighted";
     const LOWLIGHTED = "lowlighted";
     const SHADOW = "text-shadow-style";
+    const SPACE = "&nbsp;";
 
     return [
         "<br>",
@@ -20,7 +21,7 @@ const createRm = (): string[] => {
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
         "<br>",
-        `&nbsp;&nbsp;<a onclick="alert('U izradi!');" style="cursor: pointer;">Križaljka</a>`,
+        `&nbsp;&nbsp;<a onclick="alert('U izradi!');" style="cursor: pointer;">Križljka</a>` + SPACE.repeat(23 - "Križaljka".length) + "Napredna!!!",
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Ostalo:</span>`,
         "<br>",
