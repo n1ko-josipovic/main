@@ -5,6 +5,7 @@
 ---
 
 ## Struktura projekta
+```
 LV12 - HTML/
 ├── index.html
 ├── results.html
@@ -26,6 +27,7 @@ LV12 - HTML/
     ├── graph12.png
     ├── graph13.png
     └── graph14.png
+```
 
 ## Opis strukture
 
@@ -412,7 +414,7 @@ body {
     padding: var(--spacing-md);
 }
 
-/* Grid Layouts */
+/* Grid */
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -455,7 +457,7 @@ body {
     font-size: 0.875rem;
 }
 
-/* Hypothesis Styles */
+/* Hipoteze */
 .hypothesis-list {
     display: grid;
     gap: var(--spacing-md);
