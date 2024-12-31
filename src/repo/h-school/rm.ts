@@ -21,7 +21,7 @@ const createRm = (): string[] => {
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
         "<br>",
-        `&nbsp;&nbsp;<a onclick="alert('U izradi!');" style="cursor: pointer;">Križljka</a>` + SPACE.repeat(23 - "Križaljka".length) + "Napredna!!!",
+        `&nbsp;&nbsp;<a href="https://github.com/n1ko-josipovic/LCA" target="_blank">LCA</a>` + SPACE.repeat(23 - "LCA".length) + "Local Chat App",
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Ostalo:</span>`,
         "<br>",
