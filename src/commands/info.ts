@@ -38,10 +38,11 @@ export const downloadINFO = (): void => {
             },
             {
                 version: "v.3.0.2",
-                date: "29/9/2024 - 8/10/2024",
+                date: "29/9/2024 - 3/1/2025",
                 changes: [
                     "Novi školski repozitorij!",
                     "'help' naredba podijeljena u dvije naredbe, 'help' i 'help+'.",
+                    "Promijenjen rad 'password' naredbe."
                 ]
             }
         ]
