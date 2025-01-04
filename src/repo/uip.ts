@@ -8,7 +8,7 @@ const createUip = (): string[] => {
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
         "<br>",
-        `&nbsp;&nbsp;<a href="repo - sadržaj/1. razred/UIP/šah.pdf" target="_blank">Povijest i utjecaj šaha</a>`,
+        `&nbsp;&nbsp;<a href="repozitorij/1. razred/UIP/šah.pdf" target="_blank">Povijest i utjecaj šaha</a>`,
         "<br>"
     ]
 }

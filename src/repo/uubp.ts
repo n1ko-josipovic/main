@@ -19,7 +19,7 @@ const createUubp = (): string[] => {
         "<br>",
         `&nbsp;&nbsp;<span style="text-decoration: underline;">Tema:</span>`,
         "<br>",
-        `&nbsp;&nbsp;&nbsp;<a href="repo - sadržaj/2. razred/UUBP/baza.accde" download>Baza podataka srednjih škola u RH</a>`,
+        `&nbsp;&nbsp;&nbsp;<a href="repozitorij/2. razred/UUBP/baza.accde" download>Baza podataka srednjih škola u RH</a>`,
         "<br>",
         `&nbsp;&nbsp;<span>admin, admin123 😉</span>`,
         "<br>"
