@@ -9,12 +9,12 @@ import { PROJECTS } from "./commands/projects";
 import { REPO } from "./commands/repo";
 import { TIME } from "./commands/time";
 
-import { UIP } from "./repo/h-school/uip";
-import { POR } from "./repo/h-school/por";
-import { UUBP } from "./repo/h-school/uubp";
-import { UURM } from "./repo/h-school/uurm";
-import { RM } from "./repo/h-school/rm";
-import { SJWP } from "./repo/h-school/sjwp";
+import { UIP } from "./repo/uip";
+import { POR } from "./repo/por";
+import { UUBP } from "./repo/uubp";
+import { UURM } from "./repo/uurm";
+import { RM } from "./repo/rm";
+import { SJWP } from "./repo/sjwp";
 
 let mutWriteLines = document.getElementById("write-lines");
 let historyIdx = 0
@@ -421,8 +421,8 @@ const fileSystem: { [key: string]: any } = {
   }
 };
 
-let currentDirectory: any = fileSystem[""];
-let directoryStack: string[] = [""];
+let currentDirectory: any = fileSystem[""]["repozitorij"];
+let directoryStack: string[] = ["", "repozitorij"];
 let currentIndex: number = 0;
 let activeFile: string = '';
 
