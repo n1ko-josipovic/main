@@ -1,4 +1,4 @@
-# LV11 - Izrada mrežne stranice
+# Izrada mrežne stranice - A
 
 ---
 #### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV11%20-%20html/Izrada%20mrežne%20stranice%20-%20A.html)
