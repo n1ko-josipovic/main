@@ -2,11 +2,11 @@
 
 ---
 
-#### [Liste - D.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV07%20-%20html/liste%20-%20D.html)
+#### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV07%20-%20html/liste%20-%20D.html)
 
 ---
 
-
+### liste - D.html
 ```html
 <!DOCTYPE html>
 <html lang="hr">

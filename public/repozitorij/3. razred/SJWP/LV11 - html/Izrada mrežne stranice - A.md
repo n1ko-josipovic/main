@@ -1,11 +1,10 @@
 # LV11 - Izrada mrežne stranice
 
 ---
-
-#### [Izrada mrežne stranice - A.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV11%20-%20html/Izrada%20mrežne%20stranice%20-%20A.html)
+#### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV11%20-%20html/Izrada%20mrežne%20stranice%20-%20A.html)
 ---
 
-
+### Izrada mrežne stranice - A.html
 ```html
 <!DOCTYPE html>
 <html lang="hr">
@@ -42,8 +41,7 @@
                             središte
                             Hrvatske.</p>
                         <p>Grad se posebno ponosi svojim povijesnim Gornjim gradom, gdje se nalaze znamenita crkva Sv.
-                            Marka,
-                            Hrvatski sabor i Banski dvori. Donji grad krasi niz parkova i trgova poznatih kao
+                            Marka, Hrvatski sabor i Banski dvori. Donji grad krasi niz parkova i trgova poznatih kao
                             "Lenucijeva
                             potkova".</p>
                         <section class="external-links">
@@ -65,13 +63,10 @@
                 <div class="article-content">
                     <div class="article-text">
                         <p>Split je drugi najveći grad u Hrvatskoj i najveći grad na dalmatinskoj obali. Središte grada
-                            čini
-                            Dioklecijanova palača, spomenik pod zaštitom UNESCO-a, izgrađena u 4. stoljeću za rimskog
-                            cara
-                            Dioklecijana.</p>
+                            čini Dioklecijanova palača, spomenik pod zaštitom UNESCO-a, izgrađena u 4. stoljeću za rimskog
+                            cara Dioklecijana.</p>
                         <p>Danas je Split živahan mediteranski grad koji spaja povijesnu baštinu s modernim načinom
-                            života.
-                            Poznat je po svojim plažama, posebice Bačvicama, živopisnoj tržnici i rivi.</p>
+                            života. Poznat je po svojim plažama, posebice Bačvicama, živopisnoj tržnici i rivi.</p>
                         <section class="external-links">
                             <h3>Korisne poveznice</h3>
                             <ul>
@@ -93,8 +88,7 @@
                         <p>Zadar je grad iznimne povijesne važnosti i jedan od najstarijih kontinuirano naseljenih
                             gradova u
                             Hrvatskoj. Smješten na obali Jadranskog mora, grad je poznat po jedinstvenim morskim
-                            orguljama i
-                            instalaciji Pozdrav Suncu.</p>
+                            orguljama i instalaciji Pozdrav Suncu.</p>
                         <p>Povijesna jezgra grada nalazi se na poluotoku i dom je brojnim rimskim i srednjovjekovnim
                             građevinama, uključujući crkvu sv. Donata iz 9. stoljeća.</p>
                         <section class="external-links">
@@ -124,6 +118,7 @@
 </body>
 ```
 
+### Izrada mrežne stranice - A.css
 ```css
 * {
     margin: 0;

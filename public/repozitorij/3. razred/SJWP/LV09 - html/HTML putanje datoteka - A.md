@@ -1,13 +1,10 @@
 # HTML putanje datoteka - A
 
 ---
-
-#### [HTML putanje datoteka - A.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV09%20-%20html/HTML%20putanje%20datoteka%20-%20A.html)
-#### [HTML putanje datoteka - A.css](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV09%20-%20html/HTML%20putanje%20datoteka%20-%20A.css)
-
+#### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV09%20-%20html/HTML%20putanje%20datoteka%20-%20A.html)
 ---
 
-
+### HTML putanje datoteka - A.html
 ```html
 <!DOCTYPE html>
 <html lang="hr">
@@ -52,6 +49,7 @@
 </html>
 ```
 
+### HTML putanje datoteka - A.css
 ```css
 body {
     font-family: Arial, sans-serif;

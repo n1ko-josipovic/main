@@ -1,7 +1,7 @@
 # LV12 - Mrežno sjedište
 
 ---
-#### [index.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV12%20-%20html/index.html)
+#### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV12%20-%20html/index.html)
 ---
 
 ## Struktura projekta

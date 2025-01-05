@@ -1,11 +1,11 @@
 # HTML tablice - B
 ---
 
-#### [HTML tablice - B.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20B.html)
+#### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20B.html)
 
 ---
 
-
+### HTML tablice - B.html
 ```html
 <!DOCTYPE html>
 <html lang="hr">

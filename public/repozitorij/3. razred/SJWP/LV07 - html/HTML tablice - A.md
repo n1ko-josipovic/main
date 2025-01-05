@@ -2,11 +2,11 @@
 
 ---
 
-#### [HTML tablice - A.html](https://joska.vercel.app/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20A.html)
+#### [WEB stranica](https://joska.vercel.app/repozitorij/3.%20razred/SJWP/LV07%20-%20html/HTML%20tablice%20-%20A.html)
 
 ---
 
-
+### HTML tablice - A.html
 ```html
 <!DOCTYPE html>
 <html lang="hr">
