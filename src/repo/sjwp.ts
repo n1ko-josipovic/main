@@ -27,11 +27,13 @@ const createSjwp = (): string[] => {
         `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repozitorij/3. razred/SJWP/LV12.pdf" target="_blank">LV12 - Izrada mrežnog sjedišta</a>`,
         "<br>",
         `&nbsp;&nbsp;&nbsp;<span class='${LOWLIGHTED}'>CSS</span>`,
-        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repozitorij/3. razred/SJWP/LV14.docx" target="_blank">LV14 - Povezivanje HTML-a i CSS-a, vrste i sintaksa CSS-a</a>`,
+        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repozitorij/3. razred/SJWP/LV14.pdf" target="_blank">LV14 - Povezivanje HTML-a i CSS-a, vrste i sintaksa CSS-a</a>`,
+        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repozitorij/3. razred/SJWP/LV15.pdf" target="_blank">LV15 - Vrste selektora i njihova primjena</a>`,
+        `&nbsp;&nbsp;<span class='${ARROW_COLOR} ${SHADOW}'>→</span>&nbsp;<a href="repozitorij/3. razred/SJWP/LV16.docx" target="_blank">LV16 - CSS pozadine i uređivanje</a>`,
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Ostalo:</span>`,
         "<br>",
-        `&nbsp;&nbsp;<a href="https://github.com/n1ko-josipovic/main/blob/main/public/repozitorij/3.%20razred/SJWP/zimski-praznici/zimski-praznici.md" target="_blank">zimski-praznici</a>`,
+        `&nbsp;&nbsp;<a href="https://github.com/n1ko-josipovic/main/blob/main/public/repo%20-%20sadr%C5%BEaj/3.%20razred/SJWP/zimski-praznici/zimski-praznici.md" target="_blank">zimski-praznici</a>`,
         `&nbsp;&nbsp;<a href="repozitorij/3. razred/SJWP/SJWP predložak.docx" target="_blank">SJWP predložak</a>`,
         "<br>"
     ]
