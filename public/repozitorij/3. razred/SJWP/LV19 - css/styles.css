@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.choice {
+    display: inline;
+    margin-top: 50px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+button {
+    width: 5rem;
+    height: 2.5rem;
+    border: navy;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: lightblue;
+}
+
+button.activated {
+    background-color: navy;
+    color: white;
+}
+
+h1 {
+    font-family: "Sigmar", serif;
+    text-align: center;
+    font-size: 10vw;
+    color: red;
+    opacity: 0.5;
+}
+
+.images {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    margin: 10px;
+}
+
+.images figure {
+    margin: 0;
+}
+
+.images figure img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: opacity 0.5s, transform 0.5s, filter 0.5s;
+}
+
+.images figure img:hover {
+    transform: scale(0.95);
+    filter: grayscale(100%);
+    opacity: 0.75;
+}
+
+.images figure figcaption {
+    font-family: "Sigmar", serif;
+    text-align: center;
+    position: relative;
+    bottom: 10em;
+    font-size: clamp(2rem, 2vw, 10rem);
+    color: red;
+}
+
+@media (max-width: 600px) {
+    .images {
+        grid-template-columns: 1fr;
+    }
+}
