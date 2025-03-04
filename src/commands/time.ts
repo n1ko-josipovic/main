@@ -3,7 +3,7 @@ const createTime = () => {
         "Svi sveti": "01. 11.",
         "Dan sjećanja": "18. 11.",
         "I. zimski praznici": "23. 12.",
-        "II. zimski praznici": "24. 02.",
+        "II. zimski praznici": "24. 01.",
         "Proljetni praznici": "17. 04.",
         "Praznik rada": "01. 05.",
         "Dan državnosti": "30. 05.",
