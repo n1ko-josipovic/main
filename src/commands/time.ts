@@ -1,13 +1,13 @@
 const createTime = () => {
     const praznici = {
-        "Svi sveti": "01. 11.",
-        "Dan sjećanja": "18. 11.",
-        "I. zimski praznici": "23. 12.",
-        "II. zimski praznici": "24. 01.",
-        "Proljetni praznici": "17. 04.",
+        "Svih svetih": "01. 11.",
+        "Dana sjećanja": "18. 11.",
+        "I. zimskih praznika": "23. 12.",
+        "II. zimskih praznika": "24. 02.",
+        "Proljetnih praznika": "17. 04.",
         "Praznik rada": "01. 05.",
-        "Dan državnosti": "30. 05.",
-        "Zadnji dan": "13. 06.",
+        "Dana državnosti": "30. 05.",
+        "Zadnjeg dan": "13. 06.",
     };
 
     const rezultati = [];
@@ -29,9 +29,9 @@ const createTime = () => {
     }
 
     if (nextPraznik !== "") {
-        rezultati.push(`<span class='lowlighted'>${nextPraznik}</span> ~ ${differenceInDays} dana do`);
+        rezultati.push(`<span class='highlighted'>${differenceInDays} dana</span> do ${nextPraznik}`);
     } else {
-        rezultati.push("Završena nastavna godina!");
+        rezultati.push("Završena 2024./25. nastavna godina!");
     }
     rezultati.push("<br>");
 

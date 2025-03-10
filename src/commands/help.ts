@@ -1,27 +1,27 @@
 const helpObj = {
   "commands": [
     [
-      "'aboutme'",
+      "aboutme",
       "Tko sam ja?",
     ],
     [
-      "'help'",
+      "help",
       "Dostupne naredbe i značajke."
     ],
     [
-      "'help+'",
+      "help+",
       "Ostale naredbe."
     ],
     [
-      "'projects'",
+      "projects",
       "Popis softverskih projekata."
-    ],    
+    ],
     [
-      "'repo'",
+      "repo",
       "Prikaz školskog repozitorija."
     ],
     [
-      "'clear'",
+      "clear",
       "Očisti terminal."
     ]
   ],
@@ -35,8 +35,8 @@ const createHelp = (): string[] => {
     const SPACE = "&nbsp;";
     let string = "";
     string += SPACE.repeat(1);
-    string += "<span class='command'>";
-    string += ele[0];
+    string += `<span class='command' onclick='clickInputFunction("${ele[0]}")'>`;
+    string += "'" + ele[0] + "'";
     string += "</span>";
     string += SPACE.repeat(17 - ele[0].length);
     string += ele[1];

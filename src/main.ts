@@ -6,7 +6,6 @@ import { HELP } from "./commands/help";
 import { HELP_ } from "./commands/help+";
 import { downloadINFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
-import { REPO } from "./commands/repo";
 import { TIME } from "./commands/time";
 
 import { UIP } from "./repo/uip";
@@ -191,18 +190,14 @@ function commandHandler(input: string) {
       break;
 
     case 'repo':
-      if (window.innerWidth > 1600) {
-        writeLines(["Otvaranje repozitorija...", "<br>"]);
-        setTimeout(() => {
-          const fileContainer = document.getElementById('repo-container');
-          if (fileContainer) {
-            fileContainer.classList.add('show');
-            userInputKeyOption = 1;
-          }
-        }, 500);
-      } else {
-        writeLines(REPO);
-      }
+      writeLines(["Otvaranje repozitorija...", "<br>"]);
+      setTimeout(() => {
+        const fileContainer = document.getElementById('repo-container');
+        if (fileContainer) {
+          fileContainer.classList.add('show');
+          userInputKeyOption = 1;
+        }
+      }, 500);
       break;
 
     case '/repozitorij/1. razred/uip.sh':
@@ -506,7 +501,7 @@ function renderDirectory(directory: any): void {
                 USERINPUT.value = fullPath;
                 enterKey();
                 scrollToBottom();
-
+                closeRepo();
                 isFileClicked = false;
               }, 300);
             }
@@ -568,39 +563,3 @@ function closeRepo(): any {
 
 renderDirectory(currentDirectory);
 updateCurrentRepoDirectoryPath();
-
-//Repozitorij - mobile
-/*
-function addTreeList() {
-  if (!mutWriteLines) return;
-
-  const section = document.createElement('section');
-  section.className = 'list-tree';
-  section.innerHTML = `
-    <br>
-    <ul>
-      <li>srednja-škola
-        <ul>
-          <li>1. razred
-            <ul>
-                <li onclick='clickInputFunction("/1. razred/UIT.sh")'>UIT.sh</li>
-            </ul>
-          </li>
-          <li>2. razred
-            <ul>
-                <li onclick='clickInputFunction("/2. razred/UUBP.sh")'>UUBP.sh</li>
-                <li onclick='clickInputFunction("/2. razred/UURM.sh")'>UURM.sh</li>
-            </ul>
-          </li>
-          <li>3. razred
-            <ul>
-                <li onclick='clickInputFunction("/3. razred/RM.sh")'>RM.sh</li>
-                <li onclick='clickInputFunction("/3. razred/SJWP.sh")'>SJWP.sh</li>
-            </ul>
-          </li>
-      </li>
-    </ul>`;
-
-  mutWriteLines.parentNode!.insertBefore(section, mutWriteLines);
-}
-*/

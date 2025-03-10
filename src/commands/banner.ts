@@ -19,8 +19,8 @@ const createBanner = (): string[] => {
   banner.push("<br>");
   banner.push(`Dobrodošli u <span class='lowlighted' style='text-decoration: underline;'>WEB sjedište</span> ${command.version}!`);
   banner.push("<br>");
-  banner.push(`Upišite <span class='command' onclick='clickInputFunction("help")' style="cursor: help;">'help'</span> za popis svih dostupnih naredbi.`);
-  banner.push(`Upišite <span class='command' onclick='clickInputFunction("repo")' style="cursor: pointer;">'repo'</span> za pregled školskog repozitorija.`);
+  banner.push(`Upišite <span class='command' onclick='clickInputFunction("help")'>'help'</span> za popis svih dostupnih naredbi.`);
+  banner.push(`Upišite <span class='command' onclick='clickInputFunction("repo")'>'repo'</span> za pregled školskog repozitorija.`);
   banner.push("<br>");
   return banner;
 }
