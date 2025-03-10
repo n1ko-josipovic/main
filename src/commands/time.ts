@@ -29,7 +29,7 @@ const createTime = () => {
     }
 
     if (nextPraznik !== "") {
-        rezultati.push(`<span class='highlighted'>${differenceInDays} dana</span> do ${nextPraznik}`);
+        rezultati.push(`<span class='highlighted'>${differenceInDays} dana</span> do sljedećeg odmora (${nextPraznik})`);
     } else {
         rezultati.push("Završena 2024./25. nastavna godina!");
     }
