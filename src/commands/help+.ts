@@ -1,19 +1,19 @@
 const helpObj = {
     "commands": [
         [
-            "'banner'",
+            "banner",
             "Prikaz natpisa."
         ],
         [
-            "'github'",
+            "github",
             "Pregled GitHub repozitorija."
         ],
         [
-            "'history'",
+            "history",
             "Prikaz korištenih naredbi."
         ],
         [
-            "'info'",
+            "info",
             "O WEB sjedištu.",
         ],
 
@@ -23,23 +23,23 @@ const helpObj = {
         ],
 
         [
-            "'echo'",
+            "echo",
             "Ispis željene poruke."
         ],
         [
-            "'password'",
+            "password",
             "Generiranje sigurne zaporke."
         ],
         [
-            "'time'",
+            "time",
             "Koliko do praznika."
         ],
         [
-            "'translate'",
+            "translate",
             "Translate croatian to english."
         ],
         [
-            "'weather'",
+            "weather",
             "Vremenska prognoza."
         ],
     ],
