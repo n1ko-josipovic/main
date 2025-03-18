@@ -19,7 +19,7 @@ const createRm = (): string[] => {
         `&nbsp;&nbsp;<span>•</span>&nbsp;<a href="repozitorij/3. razred/RM/LV08.pdf" target="_blank">LV08 - Statičko usmjeravanje</a>`,
         `&nbsp;&nbsp;<span>•</span>&nbsp;<a href="repozitorij/3. razred/RM/LV09.pdf" target="_blank">LV09 - Konfiguracija RIPv1 protokola</a>`,
         `&nbsp;&nbsp;<span>•</span>&nbsp;<a href="repozitorij/3. razred/RM/LV10.docx" target="_blank">LV10 - Konfiguracija protokola OSPF</a>`,
-        `&nbsp;&nbsp;<span>•</span>&nbsp;<a href="repozitorij/3. razred/RM/LV11.docx" target="_blank">LV11 - Protokoli transportnog sloja (TCP i UDP)</a>`,
+        `&nbsp;&nbsp;<span>•</span>&nbsp;<a href="repozitorij/3. razred/RM/LV11.pdf" target="_blank">LV11 - Protokoli transportnog sloja (TCP i UDP)</a>`,
         "<br>",
         `&nbsp;<span class='${LOWLIGHTED}'>Seminarski rad:</span>`,
         "<br>",
