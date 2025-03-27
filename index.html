@@ -13,9 +13,7 @@
   <meta name="google-site-verification" content="a7E0rynRvnonmCk2GWwk90vAS9jh8p8RxsWlu2k0NGs" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <title>Niko Josipović</title>
-
 </head>
-
 
 <body>
   <main id="main">
@@ -45,19 +43,18 @@
       <br>
     </div>
 
-    <div id="repo-container">
-      <div class="repo-table-header">
-        <span class="repo-column-icon"><a onclick="closeRepo()" style="cursor: pointer;">Quit</a></span>
-        <span class="repo-column-name">Naziv</span>
-        <span class="repo-column-type">Vrsta</span>
-        <span class="repo-column-date">Izmijenjeno</span>
-        <span class="repo-column-who">Izmijenio</span>
+    <div id="file_system">
+      <div class="fs-table-header">
+        <span class="fs-icon"><a onclick="close_()" class="quit-btn">Quit</a></span>
+        <span class="fs-name">Name</span>
+        <span class="fs-type">Type</span>
+        <span class="fs-date">Modified</span>
+        <span class="fs-owner">Owner</span>
       </div>
-      <div class="repo-elements"></div>
-      <div id="current-repo-directory">
-        <span id="current-repo-directory-path"></span>
+      <div class="fs-elements"></div>
+      <div id="directory">
+        <span id="path"></span>
       </div>
-      <div id="repo-loading"></div>
     </div>
   </main>
 

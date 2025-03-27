@@ -166,7 +166,10 @@ a.no-hover:hover {
   font-weight: 460;
 }
 
-#repo-container {
+
+#file_system {
+  display: flex;
+  flex-direction: column;
   visibility: hidden;
   width: calc(100% - clamp(2px, 1.5vw, 12px) * 2);
   height: 0;
@@ -175,173 +178,107 @@ a.no-hover:hover {
   position: absolute;
   color: transparent;
   padding: 0;
-  border: 0;
+  border: 1px solid #FFFFFF;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 1;
   background-color: #0000AA;
   font-family: Consolas, "Courier New", monospace;
-  font-size: 14px;
+  font-size: 15px;
   transition: all 0.3s ease;
 }
 
-#repo-container.show {
+#file_system.show {
   visibility: visible;
   opacity: 1;
-  width: calc(100% - clamp(2px, 1.5vw, 12px) * 2);
   height: calc(100% - clamp(2px, 1.5vw, 12px) * 2);
   transform: none;
   color: #FFFFFF;
   padding: 0;
-  border: 2px solid #FFFFFF;
-  display: flex;
-  flex-direction: column;
 }
 
-.repo-header {
-  background-color: #00AAAA;
-  color: #000;
-  padding: 3px;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px solid #FFFFFF;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#current-repo-directory {
-  max-width: 50%;
+#directory {
+  max-width: 100%;
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
-  padding-left: 10px;
+  padding: 6px 12px;
 }
 
-.repo-panels {
-  display: flex;
-  height: calc(100% - 40px);
-  overflow: hidden;
-}
-
-.repo-panel {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid #FFFFFF;
-  overflow: hidden;
-  min-width: 120px;
-}
-
-.repo-panel:last-child {
-  border-right: none;
-}
-
-.repo-table-header {
+.fs-table-header {
   display: flex;
   background-color: #00AAAA;
   color: #000;
-  padding: 2px;
+  padding: 6px;
   border-bottom: 1px solid #FFFFFF;
 }
 
-.repo-table-header span {
+.fs-table-header span {
   flex: 1;
   text-align: center;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
 }
 
-.repo-table-header .repo-column-name {
+.fs-table-header .fs-name {
   flex: 3;
   text-align: left;
-  padding-left: 4px;
 }
 
-.repo-elements {
+.fs-elements {
   flex: 1;
   overflow-y: auto;
-  background-color: #0000AA;
+  text-align: center;
 }
 
-.repo-elements .file,
-.repo-elements .directory {
+.fs-elements .file,
+.fs-elements .directory {
   display: flex;
-  height: 20px;
-  line-height: 20px;
+  height: 27px;
+  line-height: 27px;
   cursor: pointer;
 }
 
-.repo-elements .file span,
-.repo-elements .directory span {
+.fs-elements .file:hover,
+.fs-elements .directory:hover {
+  background-color: #00AAAA;
+}
+
+.fs-elements .file span,
+.fs-elements .directory span {
   flex: 1;
-  padding: 0 2px;
+  padding: 0 3px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.repo-elements .file .repo-column-name,
-.repo-elements .directory .repo-column-name {
+.fs-elements .file .fs-name,
+.fs-elements .directory .fs-name {
   flex: 3;
   text-align: left;
-  padding-left: 4px;
 }
 
-.repo-elements .directory .repo-column-name {
-  color: #FFFFFF;
-  font-weight: bold;
-}
-
-.repo-active,
-.repo-elements .file:focus,
-.repo-elements .directory:focus {
+.fs-active,
+.fs-elements .file:focus,
+.fs-elements .directory:focus {
   background-color: #00AAAA;
   color: #000;
 }
 
-.repo-status-bar {
-  display: flex;
-  height: 18px;
-  padding: 1px 4px;
-  font-size: 13px;
-  background-color: #00AAAA;
-  color: #000;
-  border-top: 1px solid #FFFFFF;
-}
-
-.repo-function-keys {
-  display: flex;
-  height: 18px;
-  padding: 1px 0;
-  font-size: 12px;
-  background-color: #0000AA;
-  color: #FFFFFF;
-  border-top: 1px solid #FFFFFF;
-}
-
-.repo-function-key {
-  flex: 1;
-  text-align: center;
-}
-
-.repo-function-key span:first-child {
-  background-color: #AAAAAA;
-  color: #000;
-  padding: 0 2px;
-  margin-right: 1px;
+.quit-btn {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
 
-  .repo-table-header .repo-column-date,
-  .repo-table-header .repo-column-who,
-  .repo-elements .repo-column-date,
-  .repo-elements .repo-column-who {
+  .fs-table-header .fs-date,
+  .fs-table-header .fs-owner,
+  .fs-elements .fs-date,
+  .fs-elements .fs-owner {
     display: none;
   }
 }

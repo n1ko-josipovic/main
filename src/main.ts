@@ -4,7 +4,7 @@ import { BANNER } from "./commands/banner";
 import { DEFAULT } from "./commands/default";
 import { HELP } from "./commands/help";
 import { HELP_ } from "./commands/help+";
-import { downloadINFO } from "./commands/info";
+import { INFO } from "./commands/info";
 import { PROJECTS } from "./commands/projects";
 import { TIME } from "./commands/time";
 
@@ -58,7 +58,7 @@ function userInputHandler(e: KeyboardEvent) {
           break;
         case 1:
           e.preventDefault();
-          repoKeys(key);
+          handleKeyPress(key);
           break;
       }
       break;
@@ -69,7 +69,7 @@ function userInputHandler(e: KeyboardEvent) {
           break;
         case 1:
           e.preventDefault();
-          closeRepo();
+          close();
           break;
       }
 
@@ -81,7 +81,7 @@ function userInputHandler(e: KeyboardEvent) {
           e.preventDefault()
           break;
         case 1:
-          repoKeys(key);
+          handleKeyPress(key);
           e.preventDefault();
           break;
       }
@@ -93,7 +93,7 @@ function userInputHandler(e: KeyboardEvent) {
           arrowKeys(key);
           break;
         case 1:
-          repoKeys(key);
+          handleKeyPress(key);
           e.preventDefault();
           break;
       }
@@ -140,7 +140,7 @@ function enterKey() {
 
     if (trimmedThanUserInput.startsWith("echo ") && userInputThanTrimmed !== "echo") { writeLines([userInput.trimStart().slice(5), "<br>"]); }
     else if (trimmedThanUserInput.startsWith("weather ") && userInputThanTrimmed !== "weather") { const weatherCity = userInput.trimStart().slice(8); fetch(`https://wttr.in/${weatherCity}?ATm`).then(response => response.ok ? response.text() : Promise.reject()).then(weatherData => { const weatherLines = weatherData.split('\n').slice(0, window.innerWidth < 1800 ? 7 : -3); if (weatherLines.length > 0) weatherLines[weatherLines.length - 2] += '\n'; writeLines(["<br>", `<pre>${weatherLines.map(line => `&nbsp;${line}`).join('\n')}</pre>`, "<br>"]); }).catch(() => writeLines([`Greška u prikupljanju prognoze za grad: <span class='lowlighted'>${weatherCity}</span>`, "<br>"])); }
-    else if (trimmedThanUserInput.startsWith("translate ") && userInputThanTrimmed !== "translate") { const translateText = userInput.trimStart().slice(10); fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(translateText)}`).then(response => { if (!response.ok) { throw new Error('Network response was not ok'); } return response.json(); }).then(json => { const translationText = json[0]?.map((item: any[]) => item[0]).join("") || "Translation not found."; console.log('Translation:', translationText); alert(translationText); }).catch((error) => { const errorMessage = `Translation error: ${error.message}`; console.error(errorMessage); alert(errorMessage); }); }
+    else if (trimmedThanUserInput.startsWith("translate ") && userInputThanTrimmed !== "translate") { const translateText = userInput.trimStart().slice(10); fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=hr&tl=en&dt=t&q=${encodeURI(translateText)}`).then(response => { if (!response.ok) { throw new Error('Network response was not ok'); } return response.json(); }).then(json => { const translationText = json[0]?.map((item: any[]) => item[0]).join("") || "Translation not found."; alert(translationText); }).catch(() => { const errorMessage = `Translation error.`; alert(errorMessage); }); }
     else { commandHandler(userInputThanTrimmed); }
 
     USERINPUT.value = resetInput;
@@ -189,12 +189,13 @@ function commandHandler(input: string) {
       writeLines(ABOUTME);
       break;
 
+    case 'vc':
     case 'repo':
       writeLines(["Otvaranje repozitorija...", "<br>"]);
       setTimeout(() => {
-        const fileContainer = document.getElementById('repo-container');
-        if (fileContainer) {
-          fileContainer.classList.add('show');
+        const file_system = document.getElementById('file_system');
+        if (file_system) {
+          file_system.classList.add('show');
           userInputKeyOption = 1;
         }
       }, 500);
@@ -281,14 +282,14 @@ function commandHandler(input: string) {
 
     case 'info':
       writeLines(["Preuzimanje versions-log.json datoteke u tijeku...", "<br>"]);
-      downloadINFO();
+      INFO();
       break;
 
     case 'password':
       const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%&*()_[]{}|;:,.?";
       const password = Array.from({ length: 12 }, () => charset[Math.floor(Math.random() * charset.length)]).join('');
 
-      writeLines([`Zaporka: <span class='lowlighted' onclick='copyFunction()' id='copyText' style='cursor: pointer;'>${password}</span>`, "<br>"]);
+      writeLines([`Zaporka: <span class='lowlighted' onclick='copyFunction("password")' id='password' style='cursor: pointer;'>${password}</span>`, "<br>"]);
       break;
 
     case 'projects':
@@ -307,7 +308,7 @@ function commandHandler(input: string) {
       break;
 
     case 'translate':
-      writeLines(["Usage: translate [tekst]. Example: translate Pozdrav!", "<br>"]);
+      writeLines(["Usage: translate [text]. Example: translate Pozdrav!", "<br>"]);
       break;
 
     case 'weather':
@@ -341,10 +342,10 @@ function clickInputFunction(clickInput: string) {
 }
 (window as any).clickInputFunction = clickInputFunction;
 
-function copyFunction() {
-  var copyText = document.getElementById("copyText");
-  if (copyText) {
-    navigator.clipboard.writeText(copyText.innerHTML);
+function copyFunction(id: string) {
+  var text = document.getElementById(`${id}`);
+  if (text) {
+    navigator.clipboard.writeText(text.innerHTML);
   }
   alert("Zaporka uspješno kopirana u međuspremnik!");
 }
@@ -385,33 +386,33 @@ initEventListeners();
 
 
 
-// Repozitorij
+// File System
 const today = new Date().toISOString().split('T')[0];
 const fileSystem: { [key: string]: any } = {
   "": {
     "repozitorij": {
       "type": "folder",
-      "typeName": "SUB-DIR",
-      "lastModified": "2024-10-7",
+      "type_name": "SUB-DIR",
+      "date": "2024-10-7",
       "1. razred": {
         "type": "folder",
-        "typeName": "SUB-DIR",
-        "lastModified": "2024-10-7",
-        "UIP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": "2024-10-7" }
+        "type_name": "SUB-DIR",
+        "date": "2024-10-7",
+        "UIP.sh": { "type": "executable", "type_name": "SHELL SCRIPT", "date": "2024-10-7" }
       },
       "2. razred": {
         "type": "folder",
-        "typeName": "SUB-DIR",
-        "lastModified": "2024-10-7",
-        "UUBP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": "2024-10-7", },
-        "UURM.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": "2024-10-7" }
+        "type_name": "SUB-DIR",
+        "date": "2024-10-7",
+        "UUBP.sh": { "type": "executable", "type_name": "SHELL SCRIPT", "date": "2024-10-7", },
+        "UURM.sh": { "type": "executable", "type_name": "SHELL SCRIPT", "date": "2024-10-7" }
       },
       "3. razred": {
         "type": "folder",
-        "typeName": "SUB-DIR",
-        "lastModified": "2024-10-7",
-        "RM.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today },
-        "SJWP.sh": { "type": "executable", "typeName": "SHELL SCRIPT", "lastModified": today }
+        "type_name": "SUB-DIR",
+        "date": "2024-10-7",
+        "RM.sh": { "type": "executable", "type_name": "SHELL SCRIPT", "date": today },
+        "SJWP.sh": { "type": "executable", "type_name": "SHELL SCRIPT", "date": today }
       }
     }
   }
@@ -422,19 +423,19 @@ let directoryStack: string[] = ["", "repozitorij"];
 let currentIndex: number = 0;
 let activeFile: string = '';
 
-function repoKeys(e: string): void {
+function handleKeyPress(e: string): void {
   const items: NodeListOf<Element> = document.querySelectorAll('.file, .directory');
   switch (e) {
     case "ArrowDown":
       if (currentIndex < items.length - 1) {
         currentIndex++;
-        repoHighlightItem(currentIndex);
+        highlightItem(currentIndex);
       }
       break;
     case "ArrowUp":
       if (currentIndex > 0) {
         currentIndex--;
-        repoHighlightItem(currentIndex);
+        highlightItem(currentIndex);
       }
       break;
     case "Enter":
@@ -445,7 +446,7 @@ function repoKeys(e: string): void {
 
 let isFileClicked = false;
 function renderDirectory(directory: any): void {
-  const container: HTMLElement | null = document.querySelector('.repo-elements');
+  const container: HTMLElement | null = document.querySelector('.fs-elements');
 
   if (container) {
     container.innerHTML = '';
@@ -454,54 +455,51 @@ function renderDirectory(directory: any): void {
       const backOption: HTMLElement = document.createElement('div');
       backOption.className = 'directory';
       backOption.innerHTML = `
-        <span class="repo-column-icon"><i class="icon fa-regular fa-folder-open"></i></span>
-        <span class="repo-column-name">..</span>
-        <span class="repo-column-type">UP-DIR</span>
-        <span class="repo-column-date">2024-10-7</span>
-        <span class="repo-column-who">root</span>
+        <span class="fs-icon"><i class="icon fa-regular fa-folder-open"></i></span>
+        <span class="fs-name">..</span>
+        <span class="fs-type">UP-DIR</span>
+        <span class="fs-date">2024-10-7</span>
+        <span class="fs-owner">root</span>
       `;
-      backOption.onclick = goBackRepoFolder;
+      backOption.onclick = goBack;
       container.appendChild(backOption);
     }
 
     for (let item in directory) {
-      if (item !== 'type' && item !== 'typeName' && item !== 'lastModified') {
+      if (item !== 'type' && item !== 'type_name' && item !== 'date') {
         const entry: HTMLElement = document.createElement('div');
 
         const isFolder: boolean = directory[item].type === 'folder';
         entry.className = isFolder ? 'directory' : 'file';
 
-        const typeName: string = directory[item].typeName;
-        const lastModified: string = directory[item].lastModified || 'Nepoznato';
+        const type_name: string = directory[item].type_name;
+        const date: string = directory[item].date || 'Nepoznato';
         if (isFolder) {
           entry.innerHTML = `
-          <span class="repo-column-icon"> <i class="icon fa-regular fa-folder"></i></span>
-          <span class="repo-column-name">${item}</span>
-          <span class="repo-column-type">${typeName}</span>
-          <span class="repo-column-date">${lastModified}</span>
-          <span class="repo-column-who">root</span>`;
+          <span class="fs-icon"> <i class="icon fa-regular fa-folder"></i></span>
+          <span class="fs-name">${item}</span>
+          <span class="fs-type">${type_name}</span>
+          <span class="fs-date">${date}</span>
+          <span class="fs-owner">root</span>`;
         }
         else {
           entry.innerHTML = `
-          <span class="repo-column-icon"><i class="icon fa-brands fa-linux"></i></span>
-          <span class="repo-column-name">${item}</span>
-          <span class="repo-column-type">${typeName}</span>
-          <span class="repo-column-date">${lastModified}</span>
-          <span class="repo-column-who">strippy</span>`;
+          <span class="fs-icon"><i class="icon fa-brands fa-linux"></i></span>
+          <span class="fs-name">${item}</span>
+          <span class="fs-type">${type_name}</span>
+          <span class="fs-date">${date}</span>
+          <span class="fs-owner">strippy</span>`;
         }
 
         if (isFolder) {
-          entry.onclick = () => openRepoFolder(item);
+          entry.onclick = () => openFolder(item);
         } else {
           entry.onclick = () => {
             if (!isFileClicked) {
               isFileClicked = true;
               setTimeout(() => {
-                const fullPath = directoryStack.length > 0 ? directoryStack.join('/') + `/${item}` : '';
-                USERINPUT.value = fullPath;
-                enterKey();
-                scrollToBottom();
-                closeRepo();
+                const path = directoryStack.length > 0 ? directoryStack.join('/') + `/${item}` : '';
+                openFile(path);
                 isFileClicked = false;
               }, 300);
             }
@@ -512,37 +510,45 @@ function renderDirectory(directory: any): void {
     }
 
     currentIndex = 0;
-    repoHighlightItem(currentIndex);
+    highlightItem(currentIndex);
   }
 }
 
-function openRepoFolder(folderName: string): void {
+function openFolder(folderName: string): void {
   currentDirectory = currentDirectory[folderName];
   directoryStack.push(folderName);
   renderDirectory(currentDirectory);
-  updateCurrentRepoDirectoryPath();
+  updatePath();
 }
 
-function goBackRepoFolder(): void {
+function openFile(path: string): void {
+  USERINPUT.value = path;
+  enterKey();
+  scrollToBottom();
+  close();
+}
+
+
+function goBack(): void {
   directoryStack.pop();
   currentDirectory = fileSystem;
   directoryStack.forEach(dir => {
     currentDirectory = currentDirectory[dir];
   });
   renderDirectory(currentDirectory);
-  updateCurrentRepoDirectoryPath();
+  updatePath();
 }
 
-function repoHighlightItem(index: number): void {
+function highlightItem(index: number): void {
   const items: NodeListOf<Element> = document.querySelectorAll('.file, .directory');
-  items.forEach(item => item.classList.remove('repo-active'));
-  items[index].classList.add('repo-active');
-  activeFile = (items[index].querySelector('.repo-column-name') as HTMLElement)?.textContent || '';
-  updateCurrentRepoDirectoryPath();
+  items.forEach(item => item.classList.remove('fs-active'));
+  items[index].classList.add('fs-active');
+  activeFile = (items[index].querySelector('.fs-name') as HTMLElement)?.textContent || '';
+  updatePath();
 }
 
-function updateCurrentRepoDirectoryPath(): void {
-  const pathElement: HTMLElement | null = document.getElementById('current-repo-directory-path');
+function updatePath(): void {
+  const pathElement: HTMLElement | null = document.getElementById('path');
   if (pathElement) {
     const path = directoryStack.length > 0
       ? directoryStack.join('/') + '/'
@@ -551,15 +557,15 @@ function updateCurrentRepoDirectoryPath(): void {
   }
 }
 
-function closeRepo(): any {
-  const fileContainer = document.getElementById('repo-container');
-  if (fileContainer) {
-    fileContainer.classList.remove('show');
+function close(): any {
+  const file_system = document.getElementById('file_system');
+  if (file_system) {
+    file_system.classList.remove('show');
   }
   userInputKeyOption = 0;
   return;
 }
-(window as any).closeRepo = closeRepo;
+(window as any).close_ = close;
 
 renderDirectory(currentDirectory);
-updateCurrentRepoDirectoryPath();
+updatePath();

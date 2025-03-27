@@ -1,6 +1,6 @@
 const today = new Date().toISOString().split('T')[0];
 
-export const downloadINFO = (): void => {
+export const INFO = (): void => {
     const data = {
         versions: [
             { version: "v.1", start: "2023-9-11", end: "2023-11-14", name: "The-Web" },
@@ -38,11 +38,12 @@ export const downloadINFO = (): void => {
             },
             {
                 version: "v.3.0.2",
-                date: "29/9/2024 - 3/1/2025",
+                date: "29/9/2024 - 10/3/2025",
                 changes: [
-                    "Novi školski repozitorij!",
-                    "'help' naredba podijeljena u dvije naredbe, 'help' i 'help+'.",
-                    "Promijenjen rad 'password' naredbe."
+                    "Promijenjen dizajn školskog repozitorij!",
+                    "Ispis 'help' naredba podijeljen u dvije: 'help' i 'help+'.",
+                    "Promijenjen rad 'password' naredbe.",
+                    "Cjelokupno poboljšanje koda WEB sjedišta.",
                 ]
             }
         ]
