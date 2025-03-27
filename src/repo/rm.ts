@@ -54,15 +54,9 @@ const createRm = (): string[] => {
 
     const seminars: LinkItem[] = [
         {
-            text: 'Terminal e-Dnevnik',
-            url: 'https://github.com/n1ko-josipovic/terminal.e-Dnevnik',
-            description: 'Pregled e-Dnevnika iz terminala.',
-            status: null
-        },
-        {
             text: 'LCA',
             url: 'https://github.com/n1ko-josipovic/LCA',
-            description: 'Local Chat App',
+            description: 'LAN komunikacijski alat',
             status: null
         },
     ];
