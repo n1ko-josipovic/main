@@ -569,3 +569,25 @@ function close(): any {
 
 renderDirectory(currentDirectory);
 updatePath();
+
+
+const logo_light_scheme = document.querySelector('link#logo_light-scheme');
+const logo_dark_scheme = document.querySelector('link#logo_dark-scheme');
+
+function onUpdate() {
+  if (logo_light_scheme && logo_dark_scheme) {
+    if (matcher.matches) {
+      document.head.append(logo_dark_scheme);
+      logo_light_scheme.remove();
+    }
+
+    else {
+      document.head.append(logo_light_scheme);
+      logo_dark_scheme.remove();
+    }
+  }
+}
+
+var matcher = window.matchMedia('(prefers-color-scheme: dark)');
+matcher.addEventListener('change', onUpdate);
+onUpdate();
