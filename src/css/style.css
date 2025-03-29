@@ -200,7 +200,6 @@ a.no-hover:hover {
 #directory {
   max-width: 100%;
   color: #FFFFFF;
-  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -279,5 +278,26 @@ a.no-hover:hover {
   .fs-elements .fs-date,
   .fs-elements .fs-owner {
     display: none;
+  }
+
+  .fs-elements .file,
+  .fs-elements .directory {
+    height: 24px;
+    line-height: 24px;
+  }
+
+
+  #file_system {
+    font-size: 12px;
+  }
+
+  .fs-table-header span {
+    font-size: 14px;
+  }
+
+  .fs-table-header span,
+  .fs-elements .file span,
+  .fs-elements .directory span {
+    flex: 2;
   }
 }
