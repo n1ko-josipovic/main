@@ -72,7 +72,8 @@ const createSjwp = (): string[] => {
             { text: 'LV21 - Pseudoklase i pseudoelementi', url: 'repozitorij/3. razred/SJWP/LV21.pdf', status: 'incompleted' },
             { text: 'LV22 - Navigacija, izbornici, galerija slika', url: 'repozitorij/3. razred/SJWP/LV22.pdf', status: 'incompleted' },
             { text: 'LV23 - CSS media queries i flexbox layout modul', url: 'repozitorij/3. razred/SJWP/LV23.pdf', status: 'incompleted' },
-            { text: 'LV24 - CSS prijelazi (tranzicije)', url: 'repozitorij/3. razred/SJWP/LV24.docx', status: 'incompleted' },
+            { text: 'LV24 - CSS prijelazi (tranzicije)', url: 'repozitorij/3. razred/SJWP/LV24.pdf', status: 'incompleted' },
+            { text: 'LV25 - CSS obrasci (forms), brojači (counters), web izgled (layout)', url: 'repozitorij/3. razred/SJWP/LV25.docx', status: 'completed' },
         ],
     };
 
