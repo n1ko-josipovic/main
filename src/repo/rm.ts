@@ -27,6 +27,9 @@ const createRm = (): string[] => {
         const colorStyle =
             status === 'completed' ? BULLET_STYLES.completed :
                 BULLET_STYLES.incompleted;
+        if (status === 'incompleted') {
+            return `${NON_BREAKING_SPACE.repeat(2)}<span style="${BULLET_STYLES.base} ${colorStyle}">•</span>${NON_BREAKING_SPACE}<a href="#" class="link">${text}</a>`;
+        }
         return `${NON_BREAKING_SPACE.repeat(2)}<span style="${BULLET_STYLES.base} ${colorStyle}">•</span>${NON_BREAKING_SPACE}<a href="${url}" class="link" target="_blank">${text}</a>`;
     };
 
@@ -50,7 +53,8 @@ const createRm = (): string[] => {
         { text: 'LV10 - Konfiguracija protokola OSPF', url: 'repozitorij/3. razred/RM/LV10.docx', status: 'completed' },
         { text: 'LV11 - Protokoli transportnog sloja (TCP i UDP)', url: 'repozitorij/3. razred/RM/LV11.pdf', status: 'completed' },
         { text: 'LV12 - Liste pristupa (ACL) na usmjerniku', url: 'repozitorij/3. razred/RM/LV12.pdf', status: 'completed' },
-        { text: 'LV14 - Konfiguriranje mobilne žarišne točke i nadzor Wi-Fi mreže', url: '#', status: 'incompleted' },
+        { text: 'LV13 - PPP WAN enkapsulacija', url: 'repozitorij/3. razred/RM/LV13.pdf', status: 'incompleted' },
+        { text: 'LV14 - Konfiguriranje mobilne žarišne točke i nadzor Wi-Fi mreže', url: '', status: 'incompleted' },
     ];
 
     const seminars: LinkItem[] = [
