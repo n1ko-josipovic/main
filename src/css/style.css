@@ -108,6 +108,14 @@ a {
   color: #B6AAEE;
 }
 
+.link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 85%;
+}
+
 a:hover {
   background-color: var(--border);
   color: black;
