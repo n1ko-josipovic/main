@@ -27,7 +27,7 @@ const createRm = (): string[] => {
         const colorStyle =
             status === 'completed' ? BULLET_STYLES.completed :
                 BULLET_STYLES.incompleted;
-        return `${NON_BREAKING_SPACE.repeat(2)}<span style="${BULLET_STYLES.base} ${colorStyle}">•</span>${NON_BREAKING_SPACE}<a href="${url}" target="_blank">${text}</a>`;
+        return `${NON_BREAKING_SPACE.repeat(2)}<span style="${BULLET_STYLES.base} ${colorStyle}">•</span>${NON_BREAKING_SPACE}<a href="${url}" class="link" target="_blank">${text}</a>`;
     };
 
     const titledLink = ({ text, url, description }: LinkItem) => {
@@ -47,9 +47,10 @@ const createRm = (): string[] => {
         { text: 'LV06 - Konzolni pristup i temeljna konfiguracija usmjernika', url: 'repozitorij/3. razred/RM/LV06.pdf', status: 'completed' },
         { text: 'LV08 - Statičko usmjeravanje', url: 'repozitorij/3. razred/RM/LV08.pdf', status: 'completed' },
         { text: 'LV09 - Konfiguracija RIPv1 protokola', url: 'repozitorij/3. razred/RM/LV09.pdf', status: 'completed' },
-        { text: 'LV10 - Konfiguracija protokola OSPF', url: 'repozitorij/3. razred/RM/LV10.docx', status: 'incompleted' },
+        { text: 'LV10 - Konfiguracija protokola OSPF', url: 'repozitorij/3. razred/RM/LV10.docx', status: 'completed' },
         { text: 'LV11 - Protokoli transportnog sloja (TCP i UDP)', url: 'repozitorij/3. razred/RM/LV11.pdf', status: 'completed' },
-        { text: 'LV12 - Liste pristupa (ACL) na usmjerniku', url: 'repozitorij/3. razred/RM/LV12.pdf', status: 'incompleted' },
+        { text: 'LV12 - Liste pristupa (ACL) na usmjerniku', url: 'repozitorij/3. razred/RM/LV12.pdf', status: 'completed' },
+        { text: 'LV14 - Konfiguriranje mobilne žarišne točke i nadzor Wi-Fi mreže', url: 'repozitorij/3. razred/RM/LV14.docx', status: 'completed' },
     ];
 
     const seminars: LinkItem[] = [

@@ -27,7 +27,7 @@ const createSjwp = (): string[] => {
         const colorStyle =
             status === 'completed' ? BULLET_STYLES.completed :
                 BULLET_STYLES.incompleted;
-        return `${NON_BREAKING_SPACE.repeat(2)}<span style="${BULLET_STYLES.base} ${colorStyle}">•</span>${NON_BREAKING_SPACE}<a href="${url}" target="_blank">${text}</a>`;
+        return `${NON_BREAKING_SPACE.repeat(2)}<span style="${BULLET_STYLES.base} ${colorStyle}">•</span>${NON_BREAKING_SPACE}<a href="${url}" class="link" target="_blank">${text}</a>`;
     };
 
     const titledLink = ({ text, url }: LinkItem) =>
@@ -74,6 +74,8 @@ const createSjwp = (): string[] => {
             { text: 'LV23 - CSS media queries i flexbox layout modul', url: 'repozitorij/3. razred/SJWP/LV23.pdf', status: 'incompleted' },
             { text: 'LV24 - CSS prijelazi (tranzicije)', url: 'repozitorij/3. razred/SJWP/LV24.pdf', status: 'incompleted' },
             { text: 'LV25 - CSS obrasci (forms), brojači (counters), web izgled (layout)', url: 'repozitorij/3. razred/SJWP/LV25.docx', status: 'completed' },
+            { text: 'LV26 - CSS responzivni web dizajn', url: 'repozitorij/3. razred/SJWP/LV26.pdf', status: 'incompleted' },
+            { text: 'LV27 - Izrada responzivnog mrežnog sjedišta', url: 'repozitorij/3. razred/SJWP/LV27.docx', status: 'incompleted' },
         ],
     };
 
