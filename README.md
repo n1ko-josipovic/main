@@ -3,8 +3,6 @@
 Struktura projekta temelji se na radu autora <a href="https://github.com/nasan016" target="_blank">nasan016</a> pod nazivom <a href="https://github.com/nasan016/webshell" target="_blank">Webshell</a>.
 Ovom prilikom želim izraziti zahvalnost autoru na dozvoli za korištenje i prilagodbu njegova rada.
 
-<span style="color:grey">Niko Josipović, učenik III. razreda Tehničke škole Ruđera Boškovića</span>
-
 ## Značajke
 * **[Tab]** za automatsko dovršavanje naredbe.
 * **[Esc]** za brisanje linije unosa.
