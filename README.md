@@ -1,9 +1,3 @@
-# [WEB sjedište | Niko Josipović](https://joska.vercel.app/)
-
-<div align="center">
-  <img alt="banner" src="https://github.com/n1ko-josipovic/main/blob/main/public/res/banner.png">
-</div>
-
 ## O projektu
   Ovaj projekt, WEB sjedište, izrađen je za potrebe škole. Njegova primarna namjena je omogućiti objavljivanje školskih dokumenata.
 Struktura projekta temelji se na radu autora <a href="https://github.com/nasan016" target="_blank">nasan016</a> pod nazivom <a href="https://github.com/nasan016/webshell" target="_blank">Webshell</a>.
