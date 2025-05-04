@@ -54,7 +54,9 @@ const createRm = (): string[] => {
         { text: 'LV11 - Protokoli transportnog sloja (TCP i UDP)', url: 'repozitorij/3. razred/RM/LV11.pdf', status: 'completed' },
         { text: 'LV12 - Liste pristupa (ACL) na usmjerniku', url: 'repozitorij/3. razred/RM/LV12.pdf', status: 'completed' },
         { text: 'LV13 - PPP WAN enkapsulacija', url: 'repozitorij/3. razred/RM/LV13.pdf', status: 'incompleted' },
-        { text: 'LV14 - Konfiguriranje mobilne žarišne točke i nadzor Wi-Fi mreže', url: '', status: 'incompleted' },
+        { text: 'LV14 - Enkapsulacija i dekapsulacija u globalnoj mreži', url: '', status: 'completed' },
+        { text: 'LV15 - Konfiguracija mreže', url: 'repozitorij/3. razred/RM/LV15.docx', status: 'completed' },
+        { text: 'LV16 - Konfiguriranje mobilne žarišne točke i nadzor Wi-Fi mreže', url: '', status: 'incompleted' },
     ];
 
     const seminars: LinkItem[] = [

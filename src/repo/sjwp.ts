@@ -78,7 +78,9 @@ const createSjwp = (): string[] => {
             { text: 'LV24 - CSS prijelazi (tranzicije)', url: 'repozitorij/3. razred/SJWP/LV24.pdf', status: 'incompleted' },
             { text: 'LV25 - CSS obrasci (forms), brojači (counters), web izgled (layout)', url: 'repozitorij/3. razred/SJWP/LV25.pdf', status: 'incompleted' },
             { text: 'LV26 - CSS responzivni web dizajn', url: 'repozitorij/3. razred/SJWP/LV26.pdf', status: 'incompleted' },
-            { text: 'LV27 - Izrada responzivnog mrežnog sjedišta', url: 'repozitorij/3. razred/SJWP/LV27.docx', status: 'completed' },
+            { text: 'LV27 - Izrada responzivnog mrežnog sjedišta', url: 'repozitorij/3. razred/SJWP/LV27.pdf', status: 'incompleted' },
+            { text: 'LV28 - CSS animacije (kviz)', url: '', status: 'completed' },
+            { text: 'LV29 - CSS RWD okviri (framework)', url: 'repozitorij/3. razred/SJWP/LV29.pdf', status: 'incompleted' },
         ],
     };
 
